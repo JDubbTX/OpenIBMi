@@ -3,7 +3,7 @@ title: Color Settings
 date: 2020-09-01T17:44:03.000Z
 author: shane-robinson
 excerpt: It's simple to customize almost all the colors.
-draft: 
+draft: true
 seo:
   title:
   description:

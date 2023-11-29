@@ -1,9 +1,9 @@
 ---
 # This is a full listing of available Frontmatter options, available for any content (.md) file.
-title: Let's talk about static sites!
+title: Let's talk about opening up your IBM i!
 layout: page
 excerpt: # used for page excerpts and META (will be overwritten if SEO used below)
-author: shane-robinson # only displayed on Post lists and detail views. Defaults to _data/meta.authorURL
+author: John-Weirich # only displayed on Post lists and detail views. Defaults to _data/meta.authorURL
 eleventyNavigation: # Required if want to display in Main Nav Bar
   key: main # "main" is required
   title: Welcome # as it will appear in the nav
@@ -12,7 +12,7 @@ seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
   title:
   description:
   image: # used for OG:image and Twitter:image. Overrides default set in _data/meta.siteImage
-hero: graphic # options: carousel, graphic, video, split (text & image)
+hero: video # options: carousel, graphic, video, split (text & image)
 heroSettings:
   height:
     mobile: # options = h-1/1 (default = full screen), h-1/2, h-1/3, h-3/4, h-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
@@ -24,12 +24,12 @@ heroSettings:
     video: pixabay-john-macdougall.mp4 # local relative /assets/video/, or full https://... if remote?
     opacityMobile: opacity-50 # options opacity-n, 5, 10, 15, 20, 25, 50, 75, 100 (default)
     opacityDesktop: opacity-75 # Leave blank to inherit opacityMobile, use same options as opacityMobile
-  headingText: Is your data lost in the forest,<br>or the trees?
+  headingText: Crack that puppy open!
   headingTextColor: # default = text-white (can use any TailwindCSS text-[color]-[xxx])
   headingTextCase: # default = as typed - options: uppercase, lowercase, capitalize
-  subheadingText: This is some pithy text that explains why you should hire us without reading any further... Or is it farther?
+  subheadingText: Its been closed for far, far too long.
   subheadingTextColor: # Leave empty to inherit headingTextColor or default (text-white) or use any text-[color]-[xxx]
-  buttonText: Contact Us... # no button generated if left blank
+  buttonText: Contact Me... # no button generated if left blank
   buttonURL: /contact/ # full url required. Example: https://thisdomain.com/somepage/
   buttonTextColor: # leave blank to inherit from /src/_data/colors.buttonCustom or buttonDefault
   buttonBgColor: # leave blank to inherit from /src/_data/colors.buttonCustom.bg or buttonDefault.bg
@@ -43,35 +43,41 @@ heroSettings:
       - home/9.jpg
 ---
 
-We set out to build a starter project template for [11ty](https://11ty.dev '11ty Static Site Generator') that has [TailwindCSS](https://tailwindcss.com 'TailwindCSS Utility-First CSS Framework') and [Alpine.js](https://github.com/alpinejs/alpine 'Alpine.js : Think of it like Tailwind for JavaScript') baked in.
+<!-- We set out to build a starter project template for [11ty](https://11ty.dev '11ty Static Site Generator') that has [TailwindCSS](https://tailwindcss.com 'TailwindCSS Utility-First CSS Framework') and [Alpine.js](https://github.com/alpinejs/alpine 'Alpine.js : Think of it like Tailwind for JavaScript') baked in. -->
 
-Version 1.0.0 morphed into a fully-configurable text-based CMS for managing small websites with easy-to-manage configuration files in the `/src/_data` directory.
+<!-- Version 1.0.0 morphed into a fully-configurable text-based CMS for managing small websites with easy-to-manage configuration files in the `/src/_data` directory. -->
+
+Hey there, I'm excited to welcome you to my blog where I share my passion for open source technologies on the IBM i operating system. As a developer and architect, I've seen firsthand the power of using open source tools and languages to support mission-critical applications and handle large amounts of data on IBM i. That's why I'm so excited to share how to articles, tips, and tricks with you. Through this blog, I hope to help you take your IBM i platform to the next level, reduce software costs, and collaborate with developers from around the world. So whether you're a business owner, seasoned IT pro, or just starting out, join me as we explore the world of open source on IBM i together.
+
+## Who this Blog is For
+
+This blog is for seasoned RPG / COBOL / CL / DB2 developers and architects, of course.  It will also be geared towards people who are curious about what the IBM i can do.  Perhaps there is one or more IBM Power servers running  IBM i in your organization and you would like to learn more about it, and perhaps like me you want to break down walls between IBM i folks and the rest of your shop.
 
 {% wrap "mt-4 bg-indigo-100 border border-indigo-300 text-lg italic rounded-full text-center" %}
 
-**[START HERE:](/blog/) The [Blog Posts](/blog/) cover the main features of the system.**
+**[START HERE:](/blog/) The [Blog Articles](/blog/) are organzed by tags, with search coming soon**
 
 {% endwrap %}
 
-## Install and Deploy
+<!-- ## Install and Deploy
 
 To automatically deploy this Template to [Netlify for free hosting](https://www.netlify.com/pricing/), make sure you're logged in to your Netlify account and then simply click the `Deploy to netlify` button below.
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/11ta/11ta-template"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
 
 **Want to install and develop locally?** Hop over to the [GitHub repo](https://github.com/11ta/11ta-template/) and follow the instructions in the README.
-
-{% wrap "border-t border-b border-indigo-300 mt-4 "%}
+ -->
+<!-- {% wrap "border-t border-b border-indigo-300 mt-4 "%}
 
 |                            |                                                                                                                                                           |
 | :------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | **Current Deploy Status:** | [![Netlify Status](https://api.netlify.com/api/v1/badges/e6eb38e1-d081-46ea-a4f6-4d3d36ab7036/deploy-status)](https://app.netlify.com/sites/11ta/deploys) |
 
-{% endwrap %}
+{% endwrap %} -->
 
-## :fire: Credit :fire:
+<!-- ## :fire: Credit :fire: -->
 
-First and foremost, I want to credit the [11ty](https://11ty.dev) community, especially those listed in the [starter projects](https://www.11ty.dev/docs/starter/)!
+<!-- First and foremost, I want to credit the [11ty](https://11ty.dev) community, especially those listed in the [starter projects](https://www.11ty.dev/docs/starter/)!
 
 Specifically, the following starter projects helped me understand the power and flexibility of 11ty and from their examples I was able to extend the functionality to build this system:
 
@@ -79,11 +85,11 @@ Specifically, the following starter projects helped me understand the power and 
 - :fire: [eastslopestudio-eleventy-starter](https://github.com/eastslopestudio/eleventy-starter) by [Ryan Scherler](https://twitter.com/ryanscherler)
 - :fire: [eleventyone](https://github.com/philhawksworth/eleventyone) by [Phil Hawksworth](https://twitter.com/philhawksworth)
 - :fire: [eleventy-tailwind-alpinejs-starter](https://github.com/gregwolanski/eleventy-tailwindcss-alpinejs-starter) by [Greg Wolanski](https://gregwolanski.com/)
-- :fire: [jet](https://github.com/marcamos/jet) by [Marc Amos](https://twitter.com/marcamos)
+- :fire: [jet](https://github.com/marcamos/jet) by [Marc Amos](https://twitter.com/marcamos) -->
 
-## Features
+<!-- ## Features -->
 
-In addition to the Structural, Color, and Frontmatter contols listed below, the system also has the following features baked in:
+<!-- In addition to the Structural, Color, and Frontmatter contols listed below, the system also has the following features baked in:
 
 - **SIAB** _(site in a box)_ ... Update the site settings in `/src/_data/meta.js`, content on the `index.md` and `about.md` pages, replace the `/src/posts/*.md` files with your own content and your new site is fully functional and ready to publish!
 - **100 Lighthouse scores** across the site's Pages and Posts (_not just on pages with a little text and no images_ :wink:).
@@ -133,4 +139,4 @@ There are several **Shortcodes** _(both single and paired)_ and **Filters** to a
 - Easy add Collections: Projects, Services, Jobs, etc.
 - "Themed" versions for Portfolios/Creatives, Agencies, Digital Gardens, etc.
 - Fully documented migration of Wordpress to 11ty
-- [Snipcart](https://snipcart.com/) integration
+- [Snipcart](https://snipcart.com/) integration -->

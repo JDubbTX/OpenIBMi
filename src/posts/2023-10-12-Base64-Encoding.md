@@ -2,6 +2,22 @@
 layout: post
 title:  "Base 64 Encoding and Decoding with DB2"
 date:   2023-10-12
+excerpt: Base64 encoding is a method for converting binary data into ASCII text.
+author: john-weirich
+draft: false
+seo:
+  title:
+  description:
+  image: # 2020/09/svg-shortcode.svg
+images: # relative to /src/assets/images/
+  feature:
+  thumb: # 2020/09/svg-shortcode.svg
+  align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
+  height: # optional. Default = h-48 md:h-1/3
+tags:
+  - rpg
+  - db2
+  - base64
 ---
 
 Base64 encoding is a method for converting binary data into ASCII text. It's designed to prevent communication errors when transferring binary information.
@@ -10,13 +26,13 @@ The IBM i operating system provides two DB2 services that allow you to BASE64 en
 
 In this post we will discuss how to use these DB2 services, and why CCSID is an important consideration.  The examples given will utilize embedded SQL in an SQLRPGLE program.  We will make use of a service program exported procedure named 'print_this' that will be discussed in future post about service programs.  All code examples are freely available in my [IBMiExamples project on github](https://github.com/JDubbTX/IBMiExamples).
 
-### The IBM i DB2 services for base64 encoding and decoding
+## The IBM i DB2 services for base64 encoding and decoding
 
 [BASE64_ENCODE](https://www.ibm.com/docs/en/i/7.5?topic=functions-base64-encode) - returns the Base64 encoded version of a binary value.
 
 [BASE64_DECODE](https://www.ibm.com/docs/en/i/7.5?topic=functions-base64-decode) - returns a character string that has been Base64 decoded
 
-### Trying it out
+## Trying it out
 
 First lets encode a string 'MyText' in base64 using a simple SQLRPGLE program.  As mentioned above, we will make use of service program sub-procedure named 'print_this' that simply prints 2 strings passed as parameters to a spoolfile.
 
@@ -67,6 +83,17 @@ The code page for your machine is stored in a system value called QCCSID.  When 
 
 With that understanding, if you want to base64 encode / decode like the rest of the world, and you probably do, you need to make a CCSID adjustments to your code:
 
+{% columns %}
+
+{% cols "bg-gray-100 rounded-lg" %}
+
+In this version, the only modification needed was to add the CCSID keyword to the definition for `PlainText`.  I used the specific value of `1208`, but could also have used `*UTF8`.  
+
+
+{% endcols %}
+
+{% cols "bg-gray-100 rounded-lg" %}
+
 ``` diff-rpgle
 **free
 ctl-opt actgrp(*new) bnddir('BNDUTIL');
@@ -92,6 +119,12 @@ print_this('EncodedText' : %trim(EncodedText));
 return;
 ```
 
+{% endcols %}
+
+{% endcolumns %}
+
+>:bulb: IBM's documentation suggests another method, which is to CAST the CCSID inline: `VALUES QSYS2.BASE64_ENCODE (CAST(EncodedText AS VARCHAR(10) CCSID 1208)) Into :EncodedText; `
+
 Spoolfile Output:
 
 ``` text
@@ -101,13 +134,10 @@ PlainText             MyText
 EncodedText           TXlUZXh0                                                
 ```
 
-In the code above, the only modification needed was to add the CCSID keyword to the definition for `PlainText`.  I used the specific value of `1208`, but could also have used `*UTF8`.  IBM's documentation suggests another method, which is to CAST the CCSID inline:
 
-```
-VALUES QSYS2.BASE64_ENCODE (CAST(EncodedText AS VARCHAR(10) CCSID 1208)) Into :EncodedText;
-```
+{% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-200" %}
 
-### And Now to Decode
+## And Now to Decode
 
 Lets add a few more lines to our example that decode the now encoded message.
 
@@ -123,7 +153,8 @@ We define another field `TranslatedTextVarChar` of type `VARCHAR(100) CCSID(1208
 
 Then, to get the translate the decoded value back to ccsid 1208 we simply just assign the value of `DecodedTextVarBinary` to `TranslatedTextVarChar`.  RPG handles the translation for us. 
 
-Unfortunately I haven't found a way to do this in one step.  If you know of a better way, please mention it in the comments below.
+:question: Unfortunately I haven't found a way to do this in one step.  If you know of a better way, please mention it in the comments below.
+
 {% endcols %}
 
 {% cols "bg-gray-100 rounded-lg" %}
@@ -165,6 +196,8 @@ return;
 {% endcols %}
 
 {% endcolumns %}
+
+{% endwrap %}
 
 Spoolfile Output:
 

@@ -78,10 +78,15 @@ pre[class*="language-"] {
 .token.selector,
 .token.attr-name,
 .token.string {
-   color: red
+   color: orange
+}
+.token.brackets {
+	color: yellow
 }
 .token.char,
-.token.builtin,
+.token.builtin {
+	color: rgb(0, 119, 255)
+}
 .token.operator,
 .token.entity,
 .token.url,

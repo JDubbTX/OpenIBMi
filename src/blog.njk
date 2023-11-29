@@ -1,14 +1,14 @@
 ---
 title: Blog
 date: 2020-08-05
-description: The Posts List display is controled in /src/_data/structure.js and ships with 4 options.
+description: Blog Article Listing
 layout: page
 eleventyNavigation:
   key: main
   title: Blog #  as it will appear in the nav
   order: 3    # order to display in the nav
 seo:
-  title: From the blog...
+  title: Blog Articles
   description: 
 pagination:
   data: collections.post 
@@ -17,20 +17,18 @@ pagination:
   alias: posts
 ---
 
-<h2 class="mt-6">Setting Posts Lists Display</h2>
+{# 
+<h2 class="mt-6">Open your i Blog Articles</h2>
+#}
 
 <p>
-The Posts List display below is controled in <code>/src/_data/structure.js</code> and ships with 4 Component options by default in the <strong>postListStyle</strong> setting. Full instructions are in the comments in <code>/src/_data/structure.js:90</code>.
+Articles are displayed below and organized by tag.
 </p>
 
-<p>
-Currently setting = <code>postListStyle: <em>{{ structure.postListStyle }}</em>
-  </code>
-</p>
-
+{# 
 <p>
 Defaults are:
-<ol>
+ <ol>
     <li>
       <strong>postslist</strong> = Just text links with Title, Date/Author, Excerpt</li>
     <li>
@@ -40,7 +38,7 @@ Defaults are:
     <li>
       <strong>postslistcards</strong> = Cards with Border, Dropshadow, Post Thumbnail, Title, Date/Author Image, Excerpt</li>
   </ol>
-</p>
+ </p>
 
 <p>You can find these components in <code>/src/_includes/components/</code> and easily modify them or add your own by duplicating them to use as base for modifications.</p>
 <hr class="mt-8">
@@ -54,6 +52,8 @@ Pagination will NOT display if there are fewer entries than set in the frontmate
 <p>
 This template = <code>/src/blog.njk</code>.
 </p>
+
+#}
 
 <hr class="mt-8">
 
