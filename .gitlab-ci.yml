@@ -1,8 +1,15 @@
-image: node:latest
+image: node-alpine
 
 stages:
   - build
   - deploy
+
+cache:
+  paths:
+    - .npm/
+    key:
+      files:
+        - package-lock.json
 
 build:
   stage: build
