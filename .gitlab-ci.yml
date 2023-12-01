@@ -1,4 +1,4 @@
-image: node-alpine
+image: node:17-alpine3.14
 
 stages:
   - build
