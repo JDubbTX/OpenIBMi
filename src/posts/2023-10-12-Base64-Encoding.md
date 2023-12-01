@@ -8,10 +8,10 @@ draft: false
 seo:
   title:
   description:
-  image: # 2020/09/svg-shortcode.svg
+  image: 30_printable_base64.png
 images: # relative to /src/assets/images/
   feature:
-  thumb: # 2020/09/svg-shortcode.svg
+  thumb: 30_printable_base64.png
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
   height: # optional. Default = h-48 md:h-1/3
 tags:

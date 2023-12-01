@@ -8,38 +8,34 @@ draft: false
 seo:
   title:
   description:
-  image: # 2020/09/svg-shortcode.svg
+  image: RIP-PDM.png
+hero: video # options: carousel, graphic, video, split (text & image)
+heroSettings:
+  height:
+    mobile: #h-1/2 # options = h-1/1 (default = full screen), h-1/2, h-1/3, h-3/4, h-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
+    desktop: # leave blank to inherit "mobile" height (default = full screen)
+  headingText: Does this look familiar?
+  headingTextColor: text-white # default = text-white (can use any TailwindCSS text-[color]-[xxx])
+  subheadingText: ...we did this happily for decades
+  subheadingTextColor: # Leave empty to inherit headingTextColor or default (text-white) or use any text-[color]-[xxx]
+  bg:
+    video: pdm.mp4 # local relative to site root, or full https://... if remote?
+    opacityMobile: opacity-50 # options 25, 50, 75, 100 (default)
+    opacityDesktop: opacity-50 #, md:opacity-50, md:opacity-75, md:opacity-100 (default)
+
 images: # relative to /src/assets/images/
   feature:
-  thumb: # 2020/09/svg-shortcode.svg
+  thumb: RIP-PDM.png
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
   height: # optional. Default = h-48 md:h-1/3
+  
 tags:
   - style
   - tips
   - vscode
 ---
 
-Does this look familiar to you?
-
-```text
-`wrkmbrpdm library/file`
-position to member
-Edit Code for a minute
-F3, (Y to save)
-14, Enter (compile)
-wrksplf
-F18 (go to bottom of listing)
-search listing for errors
-go back into PDM and edit code for a minute
-....etc... etc... etc...
-```
-
 Well, stop it.
-
-Seriously.
-
-I don't care if you have a custom user option file that solves the world's problems.  Just stop it.
 
 You will not see any PDM examples anywhere in this blog.  That's because modern IBM i developers **do not use PDM**.  There is better out there.
 
