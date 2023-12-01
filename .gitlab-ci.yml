@@ -7,9 +7,9 @@ stages:
 cache:
   paths:
     - .npm/
-    key:
-      files:
-        - package-lock.json
+  key:
+    files:
+      - package-lock.json
 
 build:
   stage: build
