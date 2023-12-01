@@ -7,8 +7,8 @@ eleventyNavigation:
   title: Contact  # as it will appear in the nav
   order: 4        # order to display in the nav
 seo:
-  title: Contact Us!
-  description: Use this handy form to contact us. 
+  title: Contact Me!
+  description: Use this handy form to contact me. 
 ---
 
 <div class="relative bg-white">
@@ -19,11 +19,9 @@ seo:
           Get in touch
         </h2>
         <p class="mt-3 text-lg leading-6 text-gray-500">
-          This contact form is fully functional and will automatically work if you <a href="https://docs.netlify.com/forms/setup/" target="_blank">host on Netlify!</a>
+          Don't like anything you see here?  Got suggestions?  Fill in the form and send me a message!  Or you can just use the email link below.  If it gets past my spam filters, I'll be sure and respond :)
           <br><br>
-          The address info below is managed in <code>/src/_data/meta.js</code>.
-          <br><br>
-          Note the difference in <code>address.phoneDisplay</code> and <code>address.phoneCall</code> to ensure mobile users will be able to correctly dial just by pressing the phone link.
+          Send checks made out to "John Weirich" to this address:
         </p>
         <dl class="mt-8 text-base leading-6 text-gray-500">
           <div>
@@ -34,7 +32,7 @@ seo:
                 {{ meta.address.zip }}</p>
             </dd>
           </div>
-          <div class="mt-6">
+          {# <div class="mt-6">
             <dt class="sr-only">Phone number</dt>
             <dd class="flex">
               <svg class="flex-shrink-0 w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -44,7 +42,7 @@ seo:
                 <a class="hover:underline" href="tel:{{ meta.address.phoneCall }}">{{ meta.address.phoneDisplay }}</a>
               </span>
             </dd>
-          </div>
+          </div> #}
           <div class="mt-3">
             <dt class="sr-only">Email</dt>
             <dd class="flex">
@@ -98,7 +96,7 @@ seo:
             </span>
           </div>
         </form>
-        <div class="p-4 italic text-gray-600 bg-indigo-100 border rounded-lg border-indego-300">This form uses the <a class="font-semibold text-indigo-700 underline" href="https://docs.netlify.com/forms/spam-filters/#extra-spam-prevention">basic spam and recaptcha features provided by Netlify</a> . But you could wire in your own form validation if you like. Take a look at <a class="font-semibold text-indigo-700 underline" href="https://github.com/mattkingshott/iodine">Iodine.js</a> if you don't already have a fave form validator.</div>
+        <div class="p-4 italic text-gray-600 bg-indigo-100 border rounded-lg border-indego-300">This form uses the <a class="font-semibold text-indigo-700 underline" href="https://docs.netlify.com/forms/spam-filters/#extra-spam-prevention">basic spam and recaptcha features provided by Netlify</div>
       </div>
     </div>
   </div>

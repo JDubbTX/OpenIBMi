@@ -10,13 +10,28 @@ seo:
   title: About Me # overrides 'title' above on both Page and META
   description:
   image:
+hero: video
+heroSettings:
+  height:
+    mobile: h-3/4 # options = h-1/1 (default = full screen), h-1/2, h-1/3, h-3/4, h-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
+    desktop: # leave blank to inherit "mobile" height (default = full screen)
+  bg:
+    color: # default bg-black
+    image: OIP.jpg # relative to /assets/images/
+    imagePosition: # options = bg-center (default), bg-left, bg-right
+    video: John-Zoom.mp4 # pixabay-john-macdougall.mp4 # local relative /assets/video/, or full https://... if remote?
+    opacityMobile: # options opacity-n, 5, 10, 15, 20, 25, 50, 75, 100 (default)
+    opacityDesktop: # Leave blank to inherit opacityMobile, use same options as opacityMobile
+
 ---
 
 My name is John Weirich, and I am a developer and software architect on the IBM i platform.  More recently I've branched into other technologies in the Devops space.  Most of my work history has been with a company called Nelnet, a student loan company based in Lincoln Nebraska, though they have offices in other locations such as Centennial Colorado, Madison Wisconsin, Boise Idaho, and Albany New York.  While I have visited all the previously mentioned office locations, on a day-to-day basis I work remotely from my home near College Station, Texas, and have done so for over 15 years.
 
-## Nelnet?
+##
 
-Nelnet has been an amazing company for me to learn and grow on the IBM i platform, as well as other technologies.   If you are looking for a job, whether it be as a customer service rep, or in the technology space, please check out [Nelnet's careers page](https://nelnetinc.com/careers/job-opportunities/).  It’s a great company to work for.
+{% svg "nelnet", "h-20 w-100 text-blue-500 float-left" %}
+
+Nelnet has been an amazing company for me to learn and grow on the IBM i platform, as well as other technologies.   If you are looking for a job, whether it be as a customer service rep, or in the technology space, please check out [Nelnet's careers page](https://nelnetinc.com/careers/job-opportunities/).  It’s an awesome place to work.
 
 
 ## What's your passion?

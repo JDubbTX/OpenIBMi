@@ -12,16 +12,16 @@ seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
   title:
   description:
   image: # used for OG:image and Twitter:image. Overrides default set in _data/meta.siteImage
-hero: video # options: carousel, graphic, video, split (text & image)
+hero: graphic # options: carousel, graphic, video, split (text & image)
 heroSettings:
   height:
-    mobile: # options = h-1/1 (default = full screen), h-1/2, h-1/3, h-3/4, h-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
+    mobile: h-3/4 # options = h-1/1 (default = full screen), h-1/2, h-1/3, h-3/4, h-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
     desktop: # leave blank to inherit "mobile" height (default = full screen)
   bg:
     color: # default bg-black
-    image: home/plane.jpg # relative to /assets/images/
+    image: OIP.jpg # relative to /assets/images/
     imagePosition: # options = bg-center (default), bg-left, bg-right
-    video: pixabay-john-macdougall.mp4 # local relative /assets/video/, or full https://... if remote?
+    video: # pixabay-john-macdougall.mp4 # local relative /assets/video/, or full https://... if remote?
     opacityMobile: opacity-50 # options opacity-n, 5, 10, 15, 20, 25, 50, 75, 100 (default)
     opacityDesktop: opacity-75 # Leave blank to inherit opacityMobile, use same options as opacityMobile
   headingText: Crack that puppy open!
