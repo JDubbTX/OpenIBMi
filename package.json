@@ -29,7 +29,8 @@
     "dev": "npm-run-all clean --parallel dev:*",
     "build:tailwind": "npx tailwindcss -i src/assets/css/tailwind.css -o dist/css/styles.css --minify",
     "build:eleventy": "ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
-    "build": "NODE_ENV=production npm-run-all clean build:*"
+    "build": "NODE_ENV=production npm-run-all clean build:*",
+    "netlify": "netlify"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
