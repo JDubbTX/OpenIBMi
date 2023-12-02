@@ -17,10 +17,10 @@ images: # relative to /src/assets/images/
 ---
 This post explains the Code for IBM i settings that I find helpful.
 
-### Connection Settings
+# Connection Settings
 Find these settings by right clicking on your connection and selecting "Connection Settings"
 
-#### Features
+## Features
 * Quick Connect
   - faster is better.
 * Enable SQL
@@ -39,7 +39,7 @@ Find these settings by right clicking on your connection and selecting "Connecti
 * Auto Save for Actions
   - I do like to keep this checked.  Its very frustraqting when you forget to hit save and have to go back and do it again.
 
-#### Source Code
+## Source Code
 * Source ASP
   - I haven't needed to use this - you need it if your development IBM i lpar has an Auxilary Storage Pool.
 * Source file CCSID
@@ -55,7 +55,7 @@ Find these settings by right clicking on your connection and selecting "Connecti
 * Read only mode
   - There are situations where this would be useful - perhaps a connection with filters to source files that you don't have authority to modify.
 
-#### Terminals
+## Terminals
 These settings are all about the tn5250 greenscreen terminal integrated into the Code for IBM i extension.  For the most part these can be left as is. 
 * 5250 encoding
   - Take the default unless you know what you are doing.
@@ -66,7 +66,7 @@ These settings are all about the tn5250 greenscreen terminal integrated into the
 * Connection string for 5250
    - Not sure why you would need to enter a connection string.  Take the default unless you know what you are doing.
 
-#### Debugger
+## Debugger
 * Debug Port
   - Change this only if needed
 * Update Production Files
@@ -76,7 +76,7 @@ These settings are all about the tn5250 greenscreen terminal integrated into the
 * Debug Securely
   - Check it if required by your organization
 
-#### Temporary Data
+## Temporary Data
 * Temporary Library
   - This is an important one.  This must be the name of a library that you have write access to.  If you are using PUB400.com, it can be only one of the 2 libraries that you were given.
 * Temporary IFS Directory
