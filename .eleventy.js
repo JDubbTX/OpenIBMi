@@ -116,7 +116,7 @@ module.exports = function (eleventyConfig) {
 	 * Every Post will ALWAYS be published in DEVELOPMENT so you can preview locally.
 	 */
 	eleventyConfig.addCollection('post', (collection) => {
-		if (process.env.ELEVENTY_ENV !== 'production')
+		if (process.env.ELEVENTY_PRODUCTION !== 'true')
 			return [...collection.getFilteredByGlob('./src/posts/*.md')]
 		else
 			return [...collection.getFilteredByGlob('./src/posts/*.md')].filter((post) => !post.data.draft)
