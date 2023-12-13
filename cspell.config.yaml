@@ -1,0 +1,37 @@
+version: "0.2"
+ignorePaths: []
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - ACTGRP
+  - CRTRPGMOD
+  - CRTSRVPGM
+  - CURLIB
+  - dashboarding
+  - distro
+  - endcols
+  - endcolumns
+  - ENDPGMEXP
+  - endwrap
+  - ILEDOCS
+  - jweirich
+  - ODBC
+  - PGMLVL
+  - PRINTTHIS
+  - QPRINT
+  - QPRPGLESRC
+  - QSRVSRC
+  - RELATIVEPATH
+  - RPGINC
+  - Seeberger
+  - SRCSTMF
+  - SRVPGM
+  - STRPGMEXP
+  - weirich
+ignoreWords:
+  - QPTYPESRC
+  - RPGLEINC
+  - varchar
+  - RPGLE
+  - srcstmt
+import: []
