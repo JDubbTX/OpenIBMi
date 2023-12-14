@@ -15,11 +15,11 @@ images: # relative to /src/assets/images/
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
   height: # optional. Default = h-48 md:h-1/3
 tags:
-  - Node-RED
-  - Docker
-  - ODBC
-  - Kafka
-  - NodeJS
+  - node-red
+  - docker
+  - odbc
+  - kafka
+  - nodejs
 ---
 
 ## Summary
@@ -463,7 +463,23 @@ The notification at the end says that two nodes were added to palette, **ODBC_CO
 
 {% endwrap %}
 
-We will discuss the **ODBC_CONNECTION** configuration node more in a bit.  For now, go ahead and drag the ODBC node onto the workspace and rewire the nodes so that ODBC is in between the inject node and debug node.
+We will discuss the **ODBC_CONNECTION** configuration node more in a bit.  For now, perform the following steps:
+
+1. Drag the newly installed ODBC node onto the workspace
+2. Rewire the nodes so that ODBC is in between the inject node and debug node.
+
+<video src="/assets/video/Node-Red-4.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
+
+What's this?  A red triangle has appeared on the newly placed ODBC node.  The red triangle is telling us there is an error in the node's configuration.  That makes sense, because we haven't configured it yet.  Node-RED is a bit magical, but not so magic as to guess how the ODBC node is to connect to the database.  Therefore we must configure it.
+
+1. Double click on the ODBC node
+2. Click the Pencil button next to `Add new ODBC_CONNECTION`
+3. In the *Add new ODBC_CONNECTION config node* dialogue, enter `DSN=PUB400` for the Connection String.
+4. Click the **Add** button
+5. Enter a simple SQL statement, like `Select * from customer` in the Query box.
+6. Click **Done**.
+
+
 
 
 

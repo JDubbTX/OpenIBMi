@@ -1,7 +1,23 @@
 ---
 layout: post
-title:  "How to Build a Service Program"
+title:  "How to Build an ILE Service Program"
 date:   2023-10-15
+excerpt: How to build an ILE Service Program, the right way.
+author: john-weirich
+draft: false
+seo:
+  title: How to Build an ILE Service Program
+  description:
+  image: 30_printable_base64.png
+images: # relative to /src/assets/images/
+  feature:
+  thumb: 30_printable_base64.png
+  align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
+  height: # optional. Default = h-48 md:h-1/3
+tags:
+  - rpgle
+  - ile
+  - service-program
 ---
 
 ## Do It The Right Way
@@ -141,6 +157,8 @@ This data structure named `line` has the same length as the `QPRINT` printer fil
 
 The subfields of the `line` data structure will define the print layout.  There are 21 and a 100 char subfields `Label` and `Val` separated by an unnamed single character subfield.
 
+</br>
+
 ### Building the Module
 
 With our prototype and module, we can build our module with a CL create command, `CRTRPGMOD`.  The **Code for IBM i** extension makes it easy by selecting `actions` (ctl+e) and then `Create RPGLE Module`.
@@ -161,11 +179,15 @@ The above command assumes you will create a service program in the current libra
 
 Again, the Code for IBM i extension makes creating a service program easy with actions.
 
-We now have a nice new service program that can be bound to calling programs.  However, we have a problem.  The problem is that our service program has a randomly generated signature instead of a user defined signature
+We now have a nice new service program that can be bound to calling programs.  However, we have a problem.  The problem is that our service program has a randomly generated signature instead of a user defined signature.
+
+</br>
 
 #### So What?
  
 With a randomly generated signature on our service program, all calling programs will need to be recompiled any time we add a procedure to the service program.  If we didn't, we would get a signature violation error at run time.  Thats not very convenient if you are trying to write modern re-useable code.  In fact, the more re-use of the service program, the harder it becomes to ever change it.  Fortunately, we can control the signature of our service program with Binder Language.
+
+</br>
 
 #### Wait, whats a signature again?
 
@@ -195,7 +217,9 @@ ENDPGMEXP
 
 Binder language has just a few commands and is simple to understand.  `STRPGMEXP` starts a list of program exports and `ENDPGMEXP` ends a list of program exports.  `PGMLVL(*CURRENT)` means that the following list of exports is the current list of exports.  Specify `PGMLVL(*PREVIOUS)` on the old list and `PGMLVL(CURRENT)` on the new list is one way to avoid the signature fault violation, but the author recommends just specifying `SIGNATURE('NAME V0001')` to explicitly control the signature.  As long as new exports are added at the bottom of the list, you will avoid problems.
 
-#### the Service Program - Enhanced
+</br>
+
+#### The Service Program - Enhanced
 
 To make use of our binder language, we need to include the path to it in our `CRTSRVPGM` command:
 
@@ -204,6 +228,8 @@ CRTSRVPGM  SRVPGM(PRINTER) SRCSTMF('./QSRVSRC/PRINTER.BND') TEXT('PRINTER Proced
 ```
 
 in the above command, we have replaced `EXPORT (*ALL)` with the `SRCSTMF` parameter and provided a path to the file that contains our binder language, listing all the exports and the signature.  This way of creating a service program is more desireable, because you can add new procedures to the module and list of exports, but keep the same signature. Doing this means that calling programs don't need to be recompiled to avoid signature violations.
+
+</br>
 
 ### Customizing Code for IBM i Actions
 
