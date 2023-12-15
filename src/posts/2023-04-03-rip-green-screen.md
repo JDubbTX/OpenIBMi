@@ -2,7 +2,7 @@
 layout: post
 title:  "RIP PDM"
 date:   2023-04-03
-excerpt: Is this the end of greenscreen programming for IBM i?
+excerpt: Is this the end of green-screen programming for IBM i?
 author: john-weirich
 draft: false
 seo:

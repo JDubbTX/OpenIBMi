@@ -8,12 +8,29 @@ draft: false
 seo:
   title: Node-RED with ODBC and Kafka
   description:
-  image: 30_printable_base64.png
+  image: 2023/12/14/Node-Red-Hero.png
+hero: graphic # options: carousel, graphic, video, split (text & image)
+heroSettings:
+  height:
+    mobile: h-1/2 # options = h-1/1 (default = full screen), h-1/2, h-1/3, h-3/4, h-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
+    desktop: # leave blank to inherit "mobile" height (default = full screen)
+  headingText: Node-RED
+  headingTextColor: text-red-800 # text-gray-800 # default = text-white (can use any TailwindCSS text-[color]-[xxx])
+  subheadingText: ...a low code solution that works with your IBM i data
+  subheadingTextColor: text-white # Leave empty to inherit headingTextColor or default (text-white) or use any text-[color]-[xxx]
+  buttonText: # no button generated if left blank
+  buttonURL: # full url required. Example: https://thisdomain.com/somepage/
+  buttonTextColor: # leave blank to inherit from /src/_data/colors.buttonCustom or buttonDefault
+  buttonBgColor: # leave blank to inherit from /src/_data/colors.buttonCustom.bg or buttonDefault.bg
+  image: /assets/images/Node-Red-Hero.png # image URL
+  imagePosition: left # options = left, center, right
+  imageOpacity: opacity-50 # options = opacity-25, opacity-50, opacity-75, opacity-100 (default)
+  imageOpacityFilter: black # options = black or white (default) -> really depends on your background image  
 images: # relative to /src/assets/images/
   feature:
-  thumb: 30_printable_base64.png
+  thumb: 2023/12/14/Node-Red-Hero.png
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
-  height: # optional. Default = h-48 md:h-1/3
+  height: 1/2
 tags:
   - node-red
   - docker
@@ -415,7 +432,9 @@ The Side Bar contains Panes for the following:
 
 {% endwrap %}
 
-We will start bulding our flow by adding an ODBC connection to the IBM i.  Start by adding an inject and a debug node to the workspace, side by side, and wire them together by dragging a line between them:
+---
+
+We will start building our flow by adding an ODBC connection to the IBM i.  Start by adding an inject and a debug node to the workspace, side by side, and wire them together by dragging a line between them:
 
 <video src="/assets/video/Node-Red-1.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
 
@@ -443,7 +462,7 @@ If you saw a message pop up in the debug pane that has a msg.payload number, the
 
 ## Adding the ODBC Node
 
-None of the built-in nodes in the pallete allow an ODBC connection, so we need to install more nodes into our pallete from the open source community.
+None of the built-in nodes in the palette allow an ODBC connection, so we need to install more nodes into our palette from the open source community.
 
 The steps are:
 
@@ -470,7 +489,7 @@ We will discuss the **ODBC_CONNECTION** configuration node more in a bit.  For n
 
 <video src="/assets/video/Node-Red-4.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
 
-What's this?  A red triangle has appeared on the newly placed ODBC node.  The red triangle is telling us there is an error in the node's configuration.  That makes sense, because we haven't configured it yet.  Node-RED is a bit magical, but not so magic as to guess how the ODBC node is to connect to the database.  Therefore we must configure it.
+What's this?  A red triangle has appeared on the newly placed ODBC node.  The red triangle is telling us there is an error in the node's configuration.  That makes sense, because we haven't configured it yet.  Here is where the **ODBC_CONNECTION** configuration node comes into play.  Node-RED is a bit magical, but not so magic as to guess how the ODBC node is to connect to the database, therefore we must configure it in its associated configuration node.
 
 1. Double click on the ODBC node
 2. Click the Pencil button next to `Add new ODBC_CONNECTION`
@@ -478,6 +497,61 @@ What's this?  A red triangle has appeared on the newly placed ODBC node.  The re
 4. Click the **Add** button
 5. Enter a simple SQL statement, like `Select * from customer` in the Query box.
 6. Click **Done**.
+7. Click **Deploy**
+8. Click on the inject node to initiate the flow.
+
+<video src="/assets/video/Node-Red-5.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
+
+Now you should be able to see the results of your query in the debug pane. You can expand the carats to see the data being pulled from the IBM i.
+
+Now lets take it a step further.  Lets modify the inject node so that it injects something useful, instead of a timestamp that gets thrown away.  Our customer table has a numeric key **customer_id**, so lets inject a key value of 501, and then use mustache syntax on the ODBC node to add a predicate for the customer_id.
+
+{% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-200" %}
+
+:bulb: **Mustache Syntax**:  Mustache format allows templated data to be passed between nodes in a flow. You can read more on mustache syntax [here](https://mustache.github.io/mustache.5.html).
+
+{% endwrap %}
+
+1. Double click the inject node
+2. Change the datatype for msg.payload to number
+3. Enter 501 for the value
+4. Click **done**.
+5. Double click the ODBC node
+6. Enter "where customer_id = {{ payload }}" as a predicate for the SQL statement.
+7. Click **done**.
+8. Click **Deploy**.
+9. Click on the inject node
+
+<video src="/assets/video/Node-Red-6.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
+
+</br>
+
+---
+
+## Adding the Kafka Producer Node
+
+Instead of just displaying the results of our ODBC query in the debug pane, lets now take it a step further and send the data to Kafka, using a Kafka Producer node.
+
+To start, we need to install some Kafka nodes provided by the community into our palette.
+
+1. Click **Manage Palette** on the Menu
+2. Click the **Install** tab
+3. Search for "kafka
+4. Click the **Install** button next to *@hylink/node-red-kafka-client*
+5. Click **Install** in the warning dialogue
+6. Click **Close** after 3 nodes are installed
+
+<video src="/assets/video/Node-Red-7.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
+
+Like before, not all the installed nodes are visible in the palette.  The Kafka Broker node is a **onfiguration node** that specifies the kafka broker associated with a producer or consumer node.
+
+
+
+
+
+
+
+
 
 
 
