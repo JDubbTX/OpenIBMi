@@ -9,28 +9,11 @@ seo:
   title: Node-RED with ODBC and Kafka
   description:
   image: 2023/12/14/Node-Red-Hero.png
-hero: graphic # options: carousel, graphic, video, split (text & image)
-heroSettings:
-  height:
-    mobile: h-1/2 # options = h-1/1 (default = full screen), h-1/2, h-1/3, h-3/4, h-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
-    desktop: # leave blank to inherit "mobile" height (default = full screen)
-  headingText: Node-RED
-  headingTextColor: text-red-800 # text-gray-800 # default = text-white (can use any TailwindCSS text-[color]-[xxx])
-  subheadingText: ...a low code solution that works with your IBM i data
-  subheadingTextColor: text-white # Leave empty to inherit headingTextColor or default (text-white) or use any text-[color]-[xxx]
-  buttonText: # no button generated if left blank
-  buttonURL: # full url required. Example: https://thisdomain.com/somepage/
-  buttonTextColor: # leave blank to inherit from /src/_data/colors.buttonCustom or buttonDefault
-  buttonBgColor: # leave blank to inherit from /src/_data/colors.buttonCustom.bg or buttonDefault.bg
-  image: /assets/images/Node-Red-Hero.png # image URL
-  imagePosition: left # options = left, center, right
-  imageOpacity: opacity-50 # options = opacity-25, opacity-50, opacity-75, opacity-100 (default)
-  imageOpacityFilter: black # options = black or white (default) -> really depends on your background image  
 images: # relative to /src/assets/images/
-  feature:
+  feature: 2023/12/14/Node-RED-Feature.png
   thumb: 2023/12/14/Node-Red-Hero.png
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
-  height: 1/2
+  height: 1/3
 tags:
   - node-red
   - docker
@@ -543,7 +526,7 @@ To start, we need to install some Kafka nodes provided by the community into our
 
 <video src="/assets/video/Node-Red-7.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
 
-Like before, not all the installed nodes are visible in the palette.  The Kafka Broker node is a **onfiguration node** that specifies the kafka broker associated with a producer or consumer node.
+Like before, not all of the newly installed nodes are visible in the palette.  The Kafka Broker node is a **onfiguration node** that specifies the kafka broker associated with a producer or consumer node.
 
 
 

@@ -27,7 +27,7 @@ module.exports = {
 	 *
 	 *    "xxxCustom" values will always override "xxxDefault" values.
 	 *
-	 * ~~~~~ Cusomization tip ~~~~~
+	 * ~~~~~ Customization tip ~~~~~
 	 *    To quickly create a full set of custom colors,
 	 *    simply select and copy the set of "Default" elements
 	 *    and 'replace paste' them in the "Custom" area.
@@ -59,7 +59,7 @@ module.exports = {
 	 *  If you delete any variable keys, 11ty won't work.
 	 */
 	navCustom: {
-		barBg: '',
+		barBg: 'bg-blue-200',
 		text: 'text-gray-700',
 		textActive: 'text-gray-800',
 		textHover: 'text-gray-800',

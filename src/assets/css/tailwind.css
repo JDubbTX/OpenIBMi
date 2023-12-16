@@ -9,19 +9,19 @@ h6 {
 	@apply font-semibold text-gray-700;
 }
 h1 {
-	@apply text-4xl font-extrabold dark:text-white;
+	@apply text-4xl font-extrabold;
 }
 h2 {
-	@apply pt-12 text-3xl font-bold dark:text-white;
+	@apply pt-12 text-3xl font-bold;
 }
 h3 {
-	@apply text-2xl font-bold dark:text-white;
+	@apply text-2xl font-bold;
 }
 h4 {
-	@apply text-xl font-bold dark:text-white;
+	@apply text-xl font-bold;
 }
 h5 {
-	@apply text-lg font-bold dark:text-white;
+	@apply text-lg font-bold;
 }
 p a,
 li a,
