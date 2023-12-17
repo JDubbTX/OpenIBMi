@@ -59,7 +59,7 @@ module.exports = {
 	 *  If you delete any variable keys, 11ty won't work.
 	 */
 	navCustom: {
-		barBg: 'bg-blue-200',
+		barBg: 'bg-white',
 		text: 'text-gray-700',
 		textActive: 'text-gray-800',
 		textHover: 'text-gray-800',

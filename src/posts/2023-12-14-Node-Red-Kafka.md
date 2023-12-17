@@ -526,7 +526,36 @@ To start, we need to install some Kafka nodes provided by the community into our
 
 <video src="/assets/video/Node-Red-7.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
 
-Like before, not all of the newly installed nodes are visible in the palette.  The Kafka Broker node is a **onfiguration node** that specifies the kafka broker associated with a producer or consumer node.
+Like before, not all of the newly installed nodes are visible in the palette.  The Kafka Broker node is a **Configuration node** that specifies the kafka broker associated with a producer or consumer node.
+
+
+
+Lets start a kafka console consumer going in the kafka container. A console consumer is one of many kafka command line tools that will print consumed messages from a kafka topic in your kafka broker. 
+
+1. Go to the kafka image in Docker Desktop and click **Open in terminal**
+2. In the terminal that appears, enter `kafka-console-consumer --topic customers --bootstrap-server localhost:9092`
+3. Nothing exciting should happen except for a blinking cursor.  This is where any messages sent to the 'customers' topic will be displayed.  Leave it in this state for now.
+
+<video src="/assets/video/Node-Red-8.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
+
+Now that we have a kafka consumer running, lets take the results of our query and send them to our kafka broker in a JSON formatted message.  To do so, first we must add a **json** and a **producer** node to the workspace, wire them, and then configure the producer and broker settings:
+
+1. Drag a **parser - json** node and a **kafka - producer** node to the workspace. 
+2. Wire the **json** node input to the output of the **odbc** node.
+3. Wire the output of the **json** node to the **producer** producer node.
+4. Click on the **producer** node to configure it.
+5. Click the pencil button next to **Add a new broker**
+6. Enter `localhost:29092` for Hosts and click **Add**.
+7. Enter `customers` for the topic name.
+8. Click **Done**
+9. Click **Deploy**
+
+<video src="/assets/video/Node-Red-9.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
+
+Now if you put the Node-RED browser window next to the Docker Desktop kafka terminal, you can see the JSON formatted message produced and consumed when you click on the inject node.  For a bonus, try changing the customer id to 502 and producing another message.  I've hidden the Palette as well as the side pane in Node-RED for easier viewing.
+
+<video src="/assets/video/Node-Red-10.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
+
 
 
 
