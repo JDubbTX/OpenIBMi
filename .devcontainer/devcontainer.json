@@ -4,9 +4,9 @@
 	"name": "Node.js",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
-	"features": {
-		"ghcr.io/msclock/features/gitlab-ci-local:0": {}
-	}
+	// "features": {
+	// 	"ghcr.io/msclock/features/gitlab-ci-local:0": {}
+	// },
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -18,7 +18,14 @@
 	// "postCreateCommand": "yarn install",
 
 	// Configure tool-specific properties.
-	// "customizations": {},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"eseom.nunjucks-template",
+		        "streetsidesoftware.code-spell-checker"
+			]
+		}
+	}
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"

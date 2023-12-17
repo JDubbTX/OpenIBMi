@@ -1,0 +1,30 @@
+image: node:20
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - .npm/
+  key:
+    files:
+      - package-lock.json
+
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+
+deploy:
+  stage: deploy
+  before_script:
+    - npm install netlify-cli --save-dev
+  script:
+    - npm run netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --dir=dist --prod --message="Deployed from GitLab CI"
+  only:
+    - main
