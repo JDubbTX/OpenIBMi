@@ -528,7 +528,7 @@ To start, we need to install some Kafka nodes provided by the community into our
 
 Like before, not all of the newly installed nodes are visible in the palette.  The Kafka Broker node is a **Configuration node** that specifies the kafka broker associated with a producer or consumer node.
 
-
+### Start a Kafka Console Consumer
 
 Lets start a kafka console consumer going in the kafka container. A console consumer is one of many kafka command line tools that will print consumed messages from a kafka topic in your kafka broker. 
 
@@ -537,6 +537,8 @@ Lets start a kafka console consumer going in the kafka container. A console cons
 3. Nothing exciting should happen except for a blinking cursor.  This is where any messages sent to the 'customers' topic will be displayed.  Leave it in this state for now.
 
 <video src="/assets/video/Node-Red-8.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
+
+### Wire it up! 
 
 Now that we have a kafka consumer running, lets take the results of our query and send them to our kafka broker in a JSON formatted message.  To do so, first we must add a **json** and a **producer** node to the workspace, wire them, and then configure the producer and broker settings:
 
@@ -552,9 +554,16 @@ Now that we have a kafka consumer running, lets take the results of our query an
 
 <video src="/assets/video/Node-Red-9.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
 
+### Test it out
+
 Now if you put the Node-RED browser window next to the Docker Desktop kafka terminal, you can see the JSON formatted message produced and consumed when you click on the inject node.  For a bonus, try changing the customer id to 502 and producing another message.  I've hidden the Palette as well as the side pane in Node-RED for easier viewing.
 
 <video src="/assets/video/Node-Red-10.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
+
+## C
+
+## Closing Summary
+
 
 
 
