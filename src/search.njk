@@ -1,0 +1,30 @@
+---
+title: Search
+layout: page
+eleventyNavigation:
+  key: main
+  title: Search  # as it will appear in the nav
+  order: 4        # order to display in the nav
+seo:
+  title: Search
+  description: Search the Blog
+---
+
+</br>
+
+{% block content %}
+
+  <div class="field">
+    <label for="searchField">Search</label>
+    <input type="search" placeholder="Search..." id="searchField">
+  </div>
+  <ol id="searchResults"></ol>
+  <div id="noResultsFound" style="display: none">
+    <p>No results found.</p>
+  </div>
+  <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"
+></script>
+  <script type="text/javascript" src="/js/search.js"></script>
+{% endblock %}
