@@ -8,10 +8,10 @@ draft: false
 seo:
   title: Code for IBM i - Setup
   description:
-  image: 
+  image: CODE-4-i.png
 images: # relative to /src/assets/images/
   feature:
-  thumb: 
+  thumb: CODE-4-i.png
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
   height: # optional. Default = h-48 md:h-1/3
 ---

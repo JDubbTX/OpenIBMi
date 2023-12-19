@@ -8,10 +8,10 @@ draft: false
 seo:
   title: How to Build an ILE Service Program
   description:
-  image: 30_printable_base64.png
+  image: RPG-ILE.png
 images: # relative to /src/assets/images/
   feature:
-  thumb: 30_printable_base64.png
+  thumb: RPG-ILE.png
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
   height: # optional. Default = h-48 md:h-1/3
 tags:
