@@ -21,6 +21,16 @@ layout: base
   </div>
 
   {{ layoutContent | safe }}
+  
+  {# Display comments #}
+  <script src="https://utteranc.es/client.js"
+        repo="jdubbtx/OpenIBMi"
+        issue-term="title"
+        label="Comment"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+  </script>
 
   {% if structure.g_showTagPills or structure.g_showSocialShareIcons %}
     <div class="pt-4 mt-12 border-t md:justify-between md:items-start md:flex md:flex-row">
