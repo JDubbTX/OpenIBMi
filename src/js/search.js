@@ -14,7 +14,7 @@
       if (results) {
         noResultsEl.style.display = "none";
         results.map((r) => {
-          const { id, title, description } = r.doc;
+          const { id, title, excerpt } = r.doc;
           const el = document.createElement("li");
           resEl.appendChild(el);
   
@@ -27,7 +27,7 @@
           h3.appendChild(a);
   
           const p = document.createElement("p");
-          p.textContent = description;
+          p.textContent = excerpt;
           el.appendChild(p);
         });
       } else {
