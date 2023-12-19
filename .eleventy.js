@@ -11,6 +11,7 @@ const filters = require('./utils/filters.js')
 const shortcodes = require('./utils/shortcodes.js')
 const pairedshortcodes = require('./utils/paired-shortcodes.js')
 // const transforms = require('./utils/transforms.js')
+const searchFilter = require("./src/filters/searchFilter");
 
 module.exports = function (eleventyConfig) {
 	/**
@@ -171,6 +172,14 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('src/assets/images/')
 	eleventyConfig.addPassthroughCopy('src/assets/svg/')
 	eleventyConfig.addPassthroughCopy('src/assets/video/')
+    eleventyConfig.addPassthroughCopy('src/js')
+
+
+    /**
+	 * Search
+	 */
+	eleventyConfig.addFilter("search", searchFilter)
+
 
 	/**
 	 * Set custom markdown library instance...

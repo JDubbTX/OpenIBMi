@@ -1,5 +1,6 @@
 const { DateTime } = require('luxon')
 const slugify = require('slugify')
+const elasticlunr = require('elasticlunr')
 // const cleanCSS = require('clean-css')
 
 module.exports = {
@@ -63,5 +64,7 @@ module.exports = {
    cssmin: (code) => {
      return new cleanCSS({}).minify(code).styles
     },
+
+
   */
 }
