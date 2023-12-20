@@ -14,10 +14,16 @@ words:
   - elasticlunr
   - endcols
   - endcolumns
+  - enddd
+  - enddl
+  - enddt
   - ENDPGMEXP
   - endwrap
+  - greenscreen
   - ILEDOCS
   - jweirich
+  - millisecs
+  - miworkplace
   - ODBC
   - PGMLVL
   - PRINTTHIS
@@ -30,8 +36,10 @@ words:
   - SRCSTMF
   - SRVPGM
   - STRPGMEXP
+  - STRSEU
   - templating
   - weirich
+  - WRKMBRPDM
 ignoreWords:
   - QPTYPESRC
   - RPGLEINC

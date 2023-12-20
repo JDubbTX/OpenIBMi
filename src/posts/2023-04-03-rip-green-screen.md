@@ -39,31 +39,33 @@ Well, stop it.
 
 You will not see any PDM examples anywhere in this blog.  That's because modern IBM i developers **do not use PDM**.  There is better out there.
 
-Trust me.
-
 Even if you have a custom user option file that solves the worlds problems.  Just stop it.
 
 ## For the un-initiated
 
 PDM stands for Programming Development Manager.  It is one of the oldest and well loved greenscreen IDE's.  PDM's editor is SEU (Source Edit Utility).  
 
-If you haven't noticed by now, IBM back in the day had a penchant for what I call TLA's (Three Letter Acronyms) (see what I did there?).  That's because IBM i commands are typicially arranged in 3 letter abbreviation or acronym groupings.  For example DSP is the the abbreviation prefix for Display commands, and WRK is the abbreviation for work commands, MBR is for member, OBJ is for object, etc.  These abbreviations are incorporated into commands like WRKMBRPDM (Work with Members in PDM) or STRSEU (Start Source Edit Utility). Once you start to understand the standard 3 letter acronyms IBM commands start to just make sense.
+If you haven't noticed by now, IBM back in the day had a penchant for what I call TLA's (Three Letter Acronyms) (see what I did there?).  That's because IBM i commands are typically arranged in 3 letter abbreviation or acronym groupings.  For example DSP is the the abbreviation prefix for Display commands, and WRK is the abbreviation for work commands, MBR is for member, OBJ is for object, etc.  These abbreviations are incorporated into commands like WRKMBRPDM (Work with Members in PDM) or STRSEU (Start Source Edit Utility). Once you start to understand the standard 3 letter acronyms IBM commands start to just make sense.
 
 ## Here's looking at you, kid . . .
 
-Sure, I know there are a few PDM and SEU stalworts out there.  You know who you are.  Is your favorite band from the 90', 80's or (gasp) the 70's?  Did you grow up on red kool-aid and Robotron and Inspector Gadjet and Pippy Long Stocking and Wayne's World?  A few grey hairs on your head?  This blog post is for you!
+Sure, I know there are a few PDM and SEU stalwarts out there.  You know who you are.  Is your favorite band from the 90', 80's or (gasp) the 70's?  Did you grow up on red Kool-Aid and Robotron and Inspector gadget and Pippy Long Stocking and Wayne's World?  A few grey hairs on your head?  This blog post is for you!
 
 ## How it used to be
 
-At some point in the past, instead of developing on actual terminals, we (us IBM i developers) started using terminal emulators.  Terminals are great - you can open as many instances as you want, and position them however you want.  They are light-weight and fast.  There is a free 5250 emulator for download from IBM built into the Access Client Solutions tool.  There is even an open source version TN5250.  Now were talkin', right?  Function keys and line commands are great, right?  They let you zoom around at lightning speed!  Lots of peopole swear by the green screen.  Some folks still do.  If this is you, I'm sorry, we can't be friends.
+At some point in the past, instead of developing on actual terminals, we (us IBM i developers) started using terminal emulators.  Terminals are great - you can open as many instances as you want, and position them however you want.  They are light-weight and fast.  There is a free 5250 emulator for download from IBM built into the Access Client Solutions tool.  There is even an open source version TN5250.  Now were talkin', right?  Function keys and line commands are great, right?  They let you zoom around at lightning speed!  Lots of people swear by the green screen.  Some folks still do.  If this is you, I'm sorry, we can't be friends.
 
 ## How it is now
 
 There are better options than PDM.  Some of them have been around for a while, while others are relatively new.  There are several paid options, with one completely free and open source option.
 
-## If you work at an organization with $$$
+</br>
 
-[Miworkplace](https://reg.miworkplace.com/buy/) is a paid option with a free trial from Remanin software.  At the time of this writing, for a single seat its $10/month or $99/year, or 5 seats for $495/year.  For this you get a whole ton of [features](https://miworkplace.com/index.php?content=features).  I've never used it, but it looks nice.
+{% svg "miworkplace", "mt-1 mr-2 h-10 w-10 text-blue-500 float-left" %}
+
+### If you work at an organization with $$$
+
+[MiWorkplace](https://reg.miworkplace.com/buy/) is a paid option with a free trial from Remain software.  At the time of this writing, for a single seat its $10/month or $99/year, or 5 seats for $495/year.  For this you get a whole ton of [features](https://miworkplace.com/index.php?content=features).  I've never used it, but it looks nice.
 
 ## If you work at an organization with $$$$
 

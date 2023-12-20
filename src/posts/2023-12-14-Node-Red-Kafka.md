@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Node-RED with ODBC and Kafka"
+title:  "Node-RED with ODBC and Kafka - Part 1"
 date:   2023-12-04
-excerpt: How to use Node-Red to quickly connect your IBM i to the outside world with ODBC and Kafka
+excerpt: A beginner's guide to using Node-Red to quickly connect your IBM i to the outside world with ODBC and Kafka
 author: john-weirich
 draft: false
 seo:
-  title: Node-RED with ODBC and Kafka
+  title: Node-RED with ODBC and Kafka - Part 1
   description:
   image: 2023/12/14/Node-Red-Hero.png
 images: # relative to /src/assets/images/
@@ -24,11 +24,11 @@ tags:
 
 ## Summary
 
-This blog post will show how easy it is to create an ODBC connection to you IBM i's DB2 tables, run a query in Node-RED that publishes messages to a Kafka Cluster.
+This series of  blog posts will show how easy it is to create an ODBC connection to you IBM i's DB2 tables, run a query in Node-RED that publishes messages to a Kafka Cluster.  In this first post, we will discuss all the prerequisite software, and get us completely set to start building flows in Node-RED in the 2nd blog post.
 
 ## What is ODBC?
 
-**Open Database Connectivity** (ODBC) is a specification for database API.  The API can be used with several databases, including DB2, Ms Sequel Server.  It is dependent upon database specific drivers, which is why the IBM DB2 driver is listed as one of the prerequisite software.
+**Open Database Connectivity** (ODBC) is a specification for database API.  The API can be used with several databases, including DB2, Microsoft SQL Server, and more.  It is dependent upon database specific drivers, which is why the IBM DB2 driver is listed as one of the prerequisite software.
 
 ## What is Node-RED?
 
@@ -40,7 +40,7 @@ Node-RED allows you work in a browser window, wiring together the different node
 
 ## What is Kafka and why would I want to connect to it?
 
-Kafka is an event streaming technology.  At a high level, it can used to make highly redundant and high through-put messaging system of message brokers, message producers, and message consumers.  
+Kafka is an event streaming technology.  At a high level, it can used to make a highly redundant and high through-put messaging system of message brokers, message producers, and message consumers.  
 
 This blog won't go into detail about Kafka's history, or why its useful.  Its enough to know that many modern architected cloud applications use Kafka technology to provide the messaging infrastructure between microservices.
 
@@ -71,7 +71,7 @@ If you don't have an IBM i, head on over to [pub400.com](https://pub400.com) and
 
 ### Ubuntu
 
-I use a windows 11 laptop for running all the software in this blog.  Even though I use Windows, that doesn't mean I run the software in Windows natively.  While the prerequisites listed below can run natively in Windows, I find the linux version of ODBC to be more configurable and user friendly.  This is why I choose to use a Ubuntu image in WSL (Windows Subsystem for Linux) on my windows laptop.  Ubuntu is one of the most widely used linux distributions, with a vast user community and loads of resources on the web.  So by using a Ubuntu distro running in WSL on my Windows laptop, I get the best of both worlds.
+I use a Windows 11 laptop for running all the software in this blog.  Even though I use Windows, that doesn't mean I run the software in Windows natively.  While the prerequisites listed below can run natively in Windows, I find the linux version of ODBC to be more configurable and user friendly.  This is why I choose to use a Ubuntu image in WSL (Windows Subsystem for Linux) on my windows laptop.  Ubuntu is one of the most widely used linux distributions, with a vast user community and loads of resources on the web.  So by using a Ubuntu distro running in WSL on my Windows laptop, I get the best of both worlds.
 
 {% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-100" %}
 
@@ -273,7 +273,7 @@ Since we aren't using a snap package to install Node-RED (explaination below) we
 
 There are several options for installing Node-RED, including running it in a docker container like we are doing with kafka.  For this tutorial, I'm opting to install it locally in Ubuntu running in WSL on my Windows Laptop.  I'm opting not to run Node-RED in a docker container for a number of reasons.  First, because in order for a Node-RED running in a container to talk to Kafka running in a container, you have to create a [docker network bridge](https://docs.docker.com/network/drivers/bridge/), which is more than I want to get into in this blog post.  Second, because later we will want to install Node-RED on IBM i, and the IBM i operating system doesn't support running docker containers.  That means this installation is very similar to what you would do if you want to run Node-RED on IBM i.
 
-After deciding to install NODE-RED in WSL Ubuntu, there are still a couple of choices listed in the [node-red documentation](https://nodered.org/docs/getting-started/local).  Ubuntu supports SNAP packages, and that is one option, but I choose to install it using NPM, cheifly because the SNAP install doesn't allow git integrations.
+After deciding to install NODE-RED in WSL Ubuntu, there are still a couple of choices listed in the [Node-RED documentation](https://nodered.org/docs/getting-started/local).  Ubuntu supports SNAP packages, and that is one option, but I choose to install it using NPM, cheifly because the SNAP install doesn't allow git integrations.
 
 Follwing the Node-RED documentation linked above, the command to install Node-RED globally (in Ubuntu) is `sudo npm install -g --unsafe-perm node-red`.  
 
@@ -281,7 +281,7 @@ After the Node-RED install has completed, you can run Node-RED by running the co
 
 {% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-100" %}
 
-:fire: **Note:** The `node-red` command has several options that provide the ability to use a different settings file than the default **~/.node-red/settings.js**, or specify a different port than the default of **1880**.  You can read up on the different options [here](https://nodered.org/docs/getting-started/local).
+:bulb: **Note:** The `node-red` command has several options that provide the ability to use a different settings file than the default **~/.node-red/settings.js**, or specify a different port than the default of **1880**.  You can read up on the different options [here](https://nodered.org/docs/getting-started/local).
 
 {% endwrap %}
 
@@ -319,7 +319,7 @@ file using your chosen key the next time you deploy a change.
 ---------------------------------------------------------------------
 ```
 
-Other important bits of information are also displayed when you run node-red, such as version information, and the location of your settings and flows files.
+Other important bits of information are also displayed when you run Node-RED, such as version information, and the location of your settings and flows files.
 
 A warning shows about using a system-generated key for encrypting the flow credentials file.  We should deal with the warning and do what it says.  Open up the **settings.js** file listed to modify it.  Remember you can use VSCode as a text editor by simply typing _code_ and the location of the file you would like to edit on the ubuntu command line, like this: `code ~/.node-red/settings.js`.
 
@@ -336,7 +336,8 @@ credentialSecret: "JDubbsSuperSecretProperty",
 
 ### Project Mode
 
-**Optional:**  If you are interested in using Node-RED's git integration, called 'Projects', in the same **settings.js** go ahead and enable it by changing **false** to **true**:
+:fire: **Advanced:** :fire: If you are interested in using Node-RED's git integration, called 'Projects', in the same **settings.js** go ahead and enable it by changing **false** to **true**:
+
 ```json
         projects: {
             /** To enable the Projects feature, set this value to true */
@@ -354,241 +355,10 @@ credentialSecret: "JDubbsSuperSecretProperty",
 ```
 {% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-100" %}
 
-:fire: Once the Node-RED server has started, the Ubuntu command line is locked.  You can stop the server with `ctrl-c` and restart it with the same `node-red` command.  You should do this any time you change the settings in **settings.js**.
+:bulb: Once the Node-RED server has started, the Ubuntu command line is locked.  You can stop the server with `ctrl-c` and restart it with the same `node-red` command.  You should do this any time you change the settings in **settings.js**.
 
 {% endwrap %}
 
-## Building your First Flow in Node-RED
-
-Upon loading the web interface, you will be greated with a welcome window with tips.
-
-![Node-RED welcome screen](/assets/images/Node-RED-1.png)
-
-Feel free to read through the different tips, or just hit the `x` in the corner to close out of the welcome window.
-
-Lets look at some of the components of the Node-RED editor window.
-
-{% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-200" %}
-
-## Component Breakdown
-
-{% columns %}
-
-{% cols "bg-gray-100 rounded-lg" %}
-
-{% dl %}
-{% dt %} 1. Palette {% enddt %}
-{% dd %} Available nodes are listed categorically in the Palette. {% enddd %}
-
-{% dt %} 2. Workspace {% enddt %}
-{% dd %} This is where you construct your flows. {% enddd %}
-
-{% dt %} 3. Deploy {% enddt %}
-{% dd %} Press this when you are ready to test your work. {% enddd %}
-
-{% dt %} 4. Menu {% enddt %}
-{% dd %} The menu provides various options and configuration. {% enddd %}
-
-{% dt %} 5. Side Bar {% enddt %}
-{% dd %} 
-
-The Side Bar contains Panes for the following:
-* Information
-* Help
-* Debug Messages
-* Configuration nodes
-
-{% enddd %}
-
-{% enddl %}
-
-{% endcols%}
-
-{% cols "bg-gray-100 rounded-lg" %}
-
-![Node-RED parts](/assets/images/Node-RED-2.png)
-
-{% endcols%}
-
-{% endcolumns %}
-
-
-{% endwrap %}
-
----
-
-We will start building our flow by adding an ODBC connection to the IBM i.  Start by adding an inject and a debug node to the workspace, side by side, and wire them together by dragging a line between them:
-
-<video src="/assets/video/Node-Red-1.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
-
-One thing you probably noticed that tiny blue dot appears any time you make a change.  This blue dot is a notification that you have undeployed changes that will not take effect in your application until you deploy them.  
-
-{% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-200" %}
-
-:bulb: **Inject**:  An inject node is the "trigger" for the flow.  It includes a button that injects a message into the start of a flow, meaning any nodes that have been wired to it.  A message can be anything - a timestamp, a javascript object, some plain text, *or even some SQL*.
-
-:bulb: **debug**: A debug node prints message contents to the debug pane.  These are very useful when building flows in Node-RED.  They help you know the exact content of a message as it leaves one of your nodes.
-
-:bulb: **blue dot**: A notification that there are undeployed changes.
-
-{% endwrap %}
-
-In order to test our flow, we need to:
-
-1. Deploy it by pressing the deploy button
-2. Click on the debug pane so that we can see the output from the debug node
-3. Click on the inject node to initiate the flow.
-
-<video src="/assets/video/Node-Red-2.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
-
-If you saw a message pop up in the debug pane that has a msg.payload number, then SUCCESS.  The documentation for an inject node says "The default payload is a timestamp of the current time in millisecs since January 1st, 1970", and that is what you should see.  I didn't link you to some external help site, because all you need to do to get documentation for a specific node, is to click on the node while the **Help** pane in the sidebar is selected.  Nice!
-
-## Adding the ODBC Node
-
-None of the built-in nodes in the palette allow an ODBC connection, so we need to install more nodes into our palette from the open source community.
-
-The steps are:
-
-1. Click the **menu**, then **manage palette** (or you could just use the shortcut alt+shift+p)
-2. Click the **install** tab
-3. Search for `node-red-contrib-odbc`
-4. Click the **install** button
-5. Click the **install** button on the pop up dialogue
-
-<video src="/assets/video/Node-Red-3.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
-
-The notification at the end says that two nodes were added to palette, **ODBC_CONNECTION**, and **ODBC**.  Wait, if two nodes were added, why is only the ODBC node now visible in the left hand Palette view?  Thats because **ODBC_CONNECTION** is a special type of node called a configuration node.  Configuration nodes are associated with regular nodes, and provide reusable configurability for those nodes.
-
-{% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-200" %}
-
-:bulb: **Configuration Node**:  A special type of node that holds reusable configuration that can be shared by regular nodes in a flow.
-
-{% endwrap %}
-
-We will discuss the **ODBC_CONNECTION** configuration node more in a bit.  For now, perform the following steps:
-
-1. Drag the newly installed ODBC node onto the workspace
-2. Rewire the nodes so that ODBC is in between the inject node and debug node.
-
-<video src="/assets/video/Node-Red-4.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
-
-What's this?  A red triangle has appeared on the newly placed ODBC node.  The red triangle is telling us there is an error in the node's configuration.  That makes sense, because we haven't configured it yet.  Here is where the **ODBC_CONNECTION** configuration node comes into play.  Node-RED is a bit magical, but not so magic as to guess how the ODBC node is to connect to the database, therefore we must configure it in its associated configuration node.
-
-1. Double click on the ODBC node
-2. Click the Pencil button next to `Add new ODBC_CONNECTION`
-3. In the *Add new ODBC_CONNECTION config node* dialogue, enter `DSN=PUB400` for the Connection String.
-4. Click the **Add** button
-5. Enter a simple SQL statement, like `Select * from customer` in the Query box.
-6. Click **Done**.
-7. Click **Deploy**
-8. Click on the inject node to initiate the flow.
-
-<video src="/assets/video/Node-Red-5.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
-
-Now you should be able to see the results of your query in the debug pane. You can expand the carats to see the data being pulled from the IBM i.
-
-Now lets take it a step further.  Lets modify the inject node so that it injects something useful, instead of a timestamp that gets thrown away.  Our customer table has a numeric key **customer_id**, so lets inject a key value of 501, and then use mustache syntax on the ODBC node to add a predicate for the customer_id.
-
-{% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-200" %}
-
-:bulb: **Mustache Syntax**:  Mustache format allows templated data to be passed between nodes in a flow. You can read more on mustache syntax [here](https://mustache.github.io/mustache.5.html).
-
-{% endwrap %}
-
-1. Double click the inject node
-2. Change the datatype for msg.payload to number
-3. Enter 501 for the value
-4. Click **done**.
-5. Double click the ODBC node
-6. Enter "where customer_id = {{ payload }}" as a predicate for the SQL statement.
-7. Click **done**.
-8. Click **Deploy**.
-9. Click on the inject node
-
-<video src="/assets/video/Node-Red-6.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
-
-</br>
-
----
-
-## Adding the Kafka Producer Node
-
-Instead of just displaying the results of our ODBC query in the debug pane, lets now take it a step further and send the data to Kafka, using a Kafka Producer node.
-
-To start, we need to install some Kafka nodes provided by the community into our palette.
-
-1. Click **Manage Palette** on the Menu
-2. Click the **Install** tab
-3. Search for "kafka
-4. Click the **Install** button next to *@hylink/node-red-kafka-client*
-5. Click **Install** in the warning dialogue
-6. Click **Close** after 3 nodes are installed
-
-<video src="/assets/video/Node-Red-7.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
-
-Like before, not all of the newly installed nodes are visible in the palette.  The Kafka Broker node is a **Configuration node** that specifies the kafka broker associated with a producer or consumer node.
-
-</br>
-
-### Start a Kafka Console Consumer
-
-Lets start a kafka console consumer going in the kafka container. A console consumer is one of many kafka command line tools that will print consumed messages from a kafka topic in your kafka broker. 
-
-1. Go to the kafka image in Docker Desktop and click **Open in terminal**
-2. In the terminal that appears, enter `kafka-console-consumer --topic customers --bootstrap-server localhost:9092`
-3. Nothing exciting should happen except for a blinking cursor.  This is where any messages sent to the 'customers' topic will be displayed.  Leave it in this state for now.
-
-<video src="/assets/video/Node-Red-8.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
-
-</br>
-
-### Wire it up! 
-
-Now that we have a kafka consumer running, lets take the results of our query and send them to our kafka broker in a JSON formatted message.  To do so, first we must add a **json** and a **producer** node to the workspace, wire them, and then configure the producer and broker settings:
-
-1. Drag a **parser - json** node and a **kafka - producer** node to the workspace. 
-2. Wire the **json** node input to the output of the **odbc** node.
-3. Wire the output of the **json** node to the **producer** producer node.
-4. Click on the **producer** node to configure it.
-5. Click the pencil button next to **Add a new broker**
-6. Enter `localhost:29092` for Hosts and click **Add**.
-7. Enter `customers` for the topic name.
-8. Click **Done**
-9. Click **Deploy**
-
-<video src="/assets/video/Node-Red-9.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
-
-</br>
-
-### Test it out
-
-Now if you put the Node-RED browser window next to the Docker Desktop kafka terminal, you can see the JSON formatted message produced and consumed when you click on the inject node.  For a bonus, try changing the customer id to 502 and producing another message.  I've hidden the Palette as well as the side pane in Node-RED for easier viewing.
-
-<video src="/assets/video/Node-Red-10.mp4" autoplay muted loop class="object-cover w-full h-full"></video>
-
-</br>
-
-## Create a kafka consumer flow
-
-Coming soon.
-
-## Closing Summary
-
-Coming soon
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*We will start building out our ODBC + Kafka flow in Node-Red in [Part 2 of this series](/2023/12/19/node-red-with-odbc-and-kafka-part-2).*
 
 
