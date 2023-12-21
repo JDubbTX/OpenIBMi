@@ -7,7 +7,9 @@ words:
   - Aldon
   - autoplay
   - cicd
+  - clle
   - configurability
+  - CRTDIR
   - CRTRPGMOD
   - CRTSRVPGM
   - CURLIB
@@ -21,21 +23,28 @@ words:
   - enddt
   - ENDPGMEXP
   - endwrap
+  - Gitbash
   - greenscreen
   - ILEDOCS
   - jweirich
+  - keychain
+  - kornshell
   - millisecs
   - miworkplace
   - ODBC
   - PGMLVL
+  - pkgs
   - PRINTTHIS
   - QPRINT
   - QPRPGLESRC
   - QSRVSRC
+  - QSYS
+  - randomart
   - RELATIVEPATH
   - RPGINC
   - Ryver
   - Seeberger
+  - serveraddress
   - SRCSTMF
   - SRVPGM
   - STRPGMEXP
@@ -43,6 +52,7 @@ words:
   - templating
   - weirich
   - WRKMBRPDM
+  - WRKUSRPRF
 ignoreWords:
   - QPTYPESRC
   - RPGLEINC
