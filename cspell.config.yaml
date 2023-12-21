@@ -4,8 +4,12 @@ dictionaryDefinitions: []
 dictionaries: []
 words:
   - ACTGRP
+  - Aldon
   - autoplay
+  - cicd
+  - clle
   - configurability
+  - CRTDIR
   - CRTRPGMOD
   - CRTSRVPGM
   - CURLIB
@@ -14,24 +18,41 @@ words:
   - elasticlunr
   - endcols
   - endcolumns
+  - enddd
+  - enddl
+  - enddt
   - ENDPGMEXP
   - endwrap
+  - Gitbash
+  - greenscreen
   - ILEDOCS
   - jweirich
+  - keychain
+  - kornshell
+  - millisecs
+  - miworkplace
   - ODBC
   - PGMLVL
+  - pkgs
   - PRINTTHIS
   - QPRINT
   - QPRPGLESRC
   - QSRVSRC
+  - QSYS
+  - randomart
   - RELATIVEPATH
   - RPGINC
+  - Ryver
   - Seeberger
+  - serveraddress
   - SRCSTMF
   - SRVPGM
   - STRPGMEXP
+  - STRSEU
   - templating
   - weirich
+  - WRKMBRPDM
+  - WRKUSRPRF
 ignoreWords:
   - QPTYPESRC
   - RPGLEINC

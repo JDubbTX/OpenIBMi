@@ -8,10 +8,10 @@ draft: false
 seo:
   title: How to Build an ILE Service Program
   description:
-  image: 30_printable_base64.png
+  image: RPG-ILE.png
 images: # relative to /src/assets/images/
   feature:
-  thumb: 30_printable_base64.png
+  thumb: RPG-ILE.png
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
   height: # optional. Default = h-48 md:h-1/3
 tags:
@@ -27,6 +27,8 @@ Service programs are a unique feature of ILE, allowing you to combine modules an
 ## A Very Brief History of ILE
 
 ILE, or the Integrated Language Environment, is a feature of the IBM i operating system since 1993.  The original AS400 operating system used the Original Program Model (OPM).  The extended program model (EPM) was later introduced for the C and Pascal programming languages.
+
+<!-- Todo Add more history -->
 
 ## Service program building blocks
 
