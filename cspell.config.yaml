@@ -9,6 +9,7 @@ words:
   - cicd
   - clle
   - configurability
+  - CPYTOSTMF
   - CRTDIR
   - CRTRPGMOD
   - CRTSRVPGM
@@ -35,8 +36,10 @@ words:
   - PGMLVL
   - pkgs
   - PRINTTHIS
+  - QCLLESRC
   - QPRINT
   - QPRPGLESRC
+  - QRPGLESRC
   - QSRVSRC
   - QSYS
   - randomart
