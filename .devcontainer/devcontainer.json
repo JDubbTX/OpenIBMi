@@ -22,7 +22,8 @@
 		"vscode": {
 			"extensions": [
 				"eseom.nunjucks-template",
-		        "streetsidesoftware.code-spell-checker"
+				"streetsidesoftware.code-spell-checker",
+				"eamodio.gitlens"
 			]
 		}
 	}
