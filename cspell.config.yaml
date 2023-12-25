@@ -15,7 +15,9 @@ words:
   - CRTSRVPGM
   - CURLIB
   - dashboarding
+  - dataq
   - distro
+  - DSPSIZ
   - elasticlunr
   - endcols
   - endcolumns
@@ -32,11 +34,13 @@ words:
   - kornshell
   - millisecs
   - miworkplace
+  - nodebugio
   - ODBC
   - PGMLVL
   - pkgs
   - PRINTTHIS
   - QCLLESRC
+  - QDDSSRC
   - QPRINT
   - QPRPGLESRC
   - QRPGLESRC
