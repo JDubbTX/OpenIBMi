@@ -6,44 +6,67 @@ words:
   - ACTGRP
   - Aldon
   - autoplay
+  - chgvar
   - cicd
   - clle
+  - clpgm
   - configurability
   - CPYTOSTMF
+  - CRTBNDCL
   - CRTDIR
+  - CRTDSPF
   - CRTRPGMOD
   - CRTSRVPGM
   - CURLIB
   - dashboarding
   - dataq
+  - dftactgrp
   - distro
+  - DSPF
   - DSPSIZ
+  - DTAARA
   - elasticlunr
   - endcols
   - endcolumns
   - enddd
   - enddl
+  - enddo
   - enddt
+  - endpgm
   - ENDPGMEXP
   - endwrap
+  - exfmt
+  - FKEYS
   - Gitbash
   - greenscreen
   - ILEDOCS
+  - inlr
+  - iproj
   - jweirich
   - keychain
   - kornshell
   - millisecs
   - miworkplace
+  - MYCL
+  - MYDSPF
+  - MYDTAQ
+  - MYFIRSTCL
+  - MYFIRSTPGM
+  - MYOBJLIB
+  - MYRPGLE
   - nodebugio
+  - objlib
   - ODBC
   - PGMLVL
   - pkgs
   - PRINTTHIS
   - QCLLESRC
   - QDDSSRC
+  - QDTASRC
   - QPRINT
   - QPRPGLESRC
   - QRPGLESRC
+  - QSNDDTAQ
   - QSRVSRC
   - QSYS
   - randomart
@@ -57,8 +80,11 @@ words:
   - STRPGMEXP
   - STRSEU
   - tailwindcss
+  - SUBDIRS
   - templating
+  - Usrlibl
   - weirich
+  - workstn
   - WRKMBRPDM
   - WRKUSRPRF
 ignoreWords:
