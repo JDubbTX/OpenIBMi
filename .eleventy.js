@@ -5,6 +5,7 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const markdownIt = require('markdown-it')
 const markdownItEmoji = require('markdown-it-emoji')
 const pluginSvgSprite = require("eleventy-plugin-svg-sprite");
+const rollupPlugin = require('eleventy-plugin-rollup');
 
 // const collections = require('./utils/collections.js')
 const filters = require('./utils/filters.js')
@@ -19,9 +20,21 @@ module.exports = function (eleventyConfig) {
 	 * @link https://www.11ty.dev/docs/plugins/
 	 */
 
+    eleventyConfig.addPlugin(rollupPlugin, {
+		rollupOptions: {
+		  output: {
+			format: 'es',
+			dir: 'dist/assets/js',
+		  },
+		},
+	})
+
 	eleventyConfig.addPlugin(pluginRss)
 	eleventyConfig.addPlugin(pluginNavigation)
 	eleventyConfig.addPlugin(syntaxHighlight, {
+		    preAttributes: {
+			    class: ({ language }) => `group/code animate-fade rounded-lg bg-slate-900/80 language-${language || 'plain'}`,
+			},
 		    // init callback lets you customize Prism
 			init: function({ Prism }) {
 				Prism.languages.rpgle = {
@@ -172,7 +185,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('src/assets/images/')
 	eleventyConfig.addPassthroughCopy('src/assets/svg/')
 	eleventyConfig.addPassthroughCopy('src/assets/video/')
-    eleventyConfig.addPassthroughCopy('src/js')
+    eleventyConfig.addPassthroughCopy('src/assets/js/')
+	eleventyConfig.addPassthroughCopy('src/js')
 
 
     /**

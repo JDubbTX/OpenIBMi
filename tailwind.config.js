@@ -7,6 +7,7 @@ module.exports = {
 		'./src/**/*.md',
 		'./src/_data/colors.js',
 		'./src/_data/structure.js',
+		'./src/assets/js/*.js'
 	],
 	theme: {
 		extend: {
