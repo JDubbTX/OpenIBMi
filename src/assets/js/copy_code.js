@@ -35,9 +35,8 @@
       button.addEventListener('click', () => {
         navigator.clipboard.writeText(pre.textContent);
       });
-      // pre.firstChild.classList.add(...codeClasses);
+
       pre.appendChild(button);
-      // pre.insertBefore(button, pre.firstChild);
       
     });
   })();
