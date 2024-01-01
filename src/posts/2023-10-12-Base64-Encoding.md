@@ -34,7 +34,7 @@ In this post we will discuss how to use these DB2 services, and why CCSID is an 
 
 ## Trying it out
 
-First lets encode a string 'MyText' in base64 using a simple SQLRPGLE program.  As mentioned above, we will make use of service program sub-procedure named 'print_this' that simply prints 2 strings passed as parameters to a spoolfile.
+First lets encode a string 'MyText' in base64 using a simple SQLRPGLE program.  As mentioned above, we will make use of service program sub-procedure named 'print_this' that simply prints 2 strings passed as parameters to a spool file.
 
 ``` rpgle
 **free
@@ -60,7 +60,7 @@ print_this('EncodedText' : %trim(EncodedText));
 return;
 ```
 
-Spoolfile Output:
+Spool file Output:
 
 ``` text
 Field Name            Value                                                   
@@ -73,9 +73,9 @@ Now, lets check that against a base64 encoder on the web: [https://www.base64enc
 
 > ![bas64encode.org screen grab](/assets/images/base64-1.png)
 
-The encoded value from our RPG program doesn't match the encoded value from www.base64encode.org.  The reason they don't match, is because of CCSID.  CCSID, or Coded Character Set Identitifier, is what uniquely identifies the specific encoding of a code page.
+The encoded value from our RPG program doesn't match the encoded value from www.base64encode.org.  The reason they don't match, is because of CCSID.  CCSID, or Coded Character Set Identifier, is what uniquely identifies the specific encoding of a code page.
 
-If you read the documentation for base64_encode, it gives examples of base64 encodeing for both the system default EBCDIC code page and UTF-8 (code page 1208).  On IBM i, the default character set is EBCDIC, with the specific code page varying by region.
+If you read the documentation for base64_encode, it gives examples of base64 encoding for both the system default EBCDIC code page and UTF-8 (code page 1208).  On IBM i, the default character set is EBCDIC, with the specific code page varying by region.
 
 > On IBM i, ebcdic is the default character set.
 
@@ -92,7 +92,7 @@ In this version, the only modification needed was to add the CCSID keyword to th
 
 {% endcols %}
 
-{% cols "bg-gray-100 rounded-lg" %}
+{% cols "bg-gray-100 rounded-lg overflow-x-auto" %}
 
 ``` diff-rpgle
 **free
@@ -125,7 +125,7 @@ return;
 
 >:bulb: IBM's documentation suggests another method, which is to CAST the CCSID inline: `VALUES QSYS2.BASE64_ENCODE (CAST(EncodedText AS VARCHAR(10) CCSID 1208)) Into :EncodedText; `
 
-Spoolfile Output:
+Spool file Output:
 
 ``` text
 Field Name            Value                                                   
@@ -145,11 +145,11 @@ Lets add a few more lines to our example that decode the now encoded message.
 
 {% cols "bg-gray-100 rounded-lg" %}
 
-In this version of the code, we first define a field `DecodedTextVarBinary` of type `sqltype(VARBINARY:100)` to recieve the decoded text.
+In this version of the code, we first define a field `DecodedTextVarBinary` of type `sqltype(VARBINARY:100)` to receive the decoded text.
 
 We define another field `TranslatedTextVarChar` of type `VARCHAR(100) CCSID(1208)` which allows us to translate the binary ebcdic data back to UTF-8 text.  
 
-`QSYS2.BASE64_DECODE` is used to decode the encoded value `EncodedText`.  Because this is a SQL function, we prepend the argument with `:`, which indicates to the SQL precompiler that it is a host variable.  We also prepende `DecodedTextVarBinary` with `:` because it is another host variable.
+`QSYS2.BASE64_DECODE` is used to decode the encoded value `EncodedText`.  Because this is a SQL function, we prepend the argument with `:`, which indicates to the SQL precompiler that it is a host variable.  We also prepend `DecodedTextVarBinary` with `:` because it is another host variable.
 
 Then, to get the translate the decoded value back to ccsid 1208 we simply just assign the value of `DecodedTextVarBinary` to `TranslatedTextVarChar`.  RPG handles the translation for us. 
 
@@ -157,7 +157,7 @@ Then, to get the translate the decoded value back to ccsid 1208 we simply just a
 
 {% endcols %}
 
-{% cols "bg-gray-100 rounded-lg" %}
+{% cols "bg-gray-100 rounded-lg overflow-x-auto" %}
 
 ``` diff-rpgle
 **free 
@@ -199,7 +199,7 @@ return;
 
 {% endwrap %}
 
-Spoolfile Output:
+Spool file Output:
 
 ``` text
 Field Name            Value                                                   

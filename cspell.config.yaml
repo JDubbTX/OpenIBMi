@@ -6,6 +6,9 @@ words:
   - ACTGRP
   - Aldon
   - autoplay
+  - bnddir
+  - BNDUTIL
+  - CCSID
   - chgvar
   - cicd
   - clle
@@ -15,16 +18,19 @@ words:
   - CRTBNDCL
   - CRTDIR
   - CRTDSPF
+  - CRTDTAQ
   - CRTRPGMOD
   - CRTSRVPGM
   - CURLIB
   - dashboarding
   - dataq
+  - dataqlib
   - dftactgrp
   - distro
   - DSPF
   - DSPSIZ
   - DTAARA
+  - DTAQ
   - elasticlunr
   - endcols
   - endcolumns
@@ -35,7 +41,9 @@ words:
   - endpgm
   - ENDPGMEXP
   - endwrap
+  - evfevent
   - exfmt
+  - extpgm
   - FKEYS
   - Gitbash
   - greenscreen
@@ -44,7 +52,10 @@ words:
   - iproj
   - jweirich
   - keychain
+  - Kjjhaej
   - kornshell
+  - LIBL
+  - MAXLEN
   - millisecs
   - miworkplace
   - MYCL
@@ -59,7 +70,9 @@ words:
   - ODBC
   - PGMLVL
   - pkgs
+  - precompiler
   - PRINTTHIS
+  - QCCSID
   - QCLLESRC
   - QDDSSRC
   - QDTASRC
@@ -75,14 +88,17 @@ words:
   - Ryver
   - Seeberger
   - serveraddress
+  - SQLRPGLE
+  - sqltype
   - SRCSTMF
   - SRVPGM
   - STRPGMEXP
   - STRSEU
-  - tailwindcss
   - SUBDIRS
+  - tailwindcss
   - templating
   - Usrlibl
+  - VARBINARY
   - weirich
   - workstn
   - WRKMBRPDM
