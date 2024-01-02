@@ -355,7 +355,7 @@ credentialSecret: "JDubbsSuperSecretProperty",
 ```
 {% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-100" %}
 
-:bulb: Once the Node-RED server has started, the Ubuntu command line is locked.  You can stop the server with `ctrl-c` and restart it with the same `node-red` command.  You should do this any time you change the settings in **settings.js**.
+:bulb: Once the Node-RED server has started, the Ubuntu command line is locked.  You can stop the server with `Ctrl+c` and restart it with the same `node-red` command.  You should do this any time you change the settings in **settings.js**.
 
 {% endwrap %}
 

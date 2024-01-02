@@ -85,6 +85,7 @@ words:
   - randomart
   - RELATIVEPATH
   - RPGINC
+  - rpglint
   - Ryver
   - Seeberger
   - serveraddress
