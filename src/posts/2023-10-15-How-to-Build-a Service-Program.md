@@ -163,7 +163,7 @@ The subfields of the `line` data structure will define the print layout.  There 
 
 ### Building the Module
 
-With our prototype and module, we can build our module with a CL create command, `CRTRPGMOD`.  The **Code for IBM i** extension makes it easy by selecting `actions` (ctl+e) and then `Create RPGLE Module`.
+With our prototype and module, we can build our module with a CL create command, `CRTRPGMOD`.  The **Code for IBM i** extension makes it easy by selecting `actions` (Ctrl+e) and then `Create RPGLE Module`.
 
 ![Alt text](/assets/images/BuildPrinterModule1.gif)
 
