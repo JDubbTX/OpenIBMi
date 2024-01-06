@@ -42,18 +42,21 @@ words:
   - endpgm
   - ENDPGMEXP
   - endwrap
+  - esac
   - evfevent
   - exfmt
   - extpgm
   - FKEYS
   - Gitbash
   - greenscreen
+  - IBMI
   - ILEDOCS
   - inlr
   - iproj
   - isql
   - jweirich
   - keychain
+  - keyscan
   - Kjjhaej
   - kornshell
   - LIBL
@@ -91,6 +94,7 @@ words:
   - rpglint
   - Ryver
   - SASL
+  - SAVF
   - Seeberger
   - serveraddress
   - SQLRPGLE
@@ -104,6 +108,7 @@ words:
   - tailwindcss
   - templating
   - unixodbc
+  - USERID
   - Usrlibl
   - VARBINARY
   - weirich
