@@ -34,7 +34,7 @@ This series of  blog posts will show how easy it is to create an ODBC connection
 
 Node-RED is an open source, low-code, browser based message flow technology that is written in Node.js.  It allows wiring together 'nodes' of different types for easy transmission and translation of data, for example ODBC and Kafka.
 
-Node-RED is also a common dashboarding tool.  In fact, The Bearded Geek (Matt Seeberger) has a cool [IBM i dashboard](https://ibmicommunity.thebeardedgeek.com/2020/11/ibm-i-node-red-admin-dashboard-example/) that runs on Node RED.  If you have time, check it out - its what inspired me to get in to node red in the first place.
+Node-RED is also a common dashboarding tool.  In fact, The Bearded Geek (Matt Seeberger) has a cool [IBM i dashboard](https://ibmicommunity.thebeardedgeek.com/2020/11/ibm-i-node-red-admin-dashboard-example/) that runs on Node RED.  If you have time, check it out - its what inspired me to get in to Node-RED in the first place.
 
 Node-RED allows you work in a browser window, wiring together the different nodes that are needed for your application and customizing the nodes as you go along.  JavaScript functions can also be written inside a node.
 
@@ -61,7 +61,7 @@ There are loads more Kafka resources on the web, just start googling.  I started
 
 {% svg "IBM_i_logo", "mt-1 mr-2 h-12 w-12 text-blue-500 float-top" %}
 
-For most of this tutorial we will not interact directly with an IBM i partition, but the ODBC portion assumes that you have a Username / Password to an IBM i partition, and you know its IP address, or DNS address.  You'll also need to know the name of a library with a table that you have read access to.
+For most of this tutorial we will not interact directly with an IBM i partition, but the ODBC part does assume that you have a Username / Password to an IBM i partition, and you know its IP address, or DNS address.  You'll also need to know the name of a library with a table that you have read access to.
 
 If you don't have an IBM i, head on over to [pub400.com](https://pub400.com) and create a free login.  You'll then have to figure out how to create a table in your library and populate it with some data, or you can just query one of the [system tables](https://www.ibm.com/docs/en/i/7.5?topic=views-i-catalog-tables).
 
@@ -71,7 +71,7 @@ If you don't have an IBM i, head on over to [pub400.com](https://pub400.com) and
 
 ### Ubuntu
 
-I use a Windows 11 laptop for running all the software in this blog.  Even though I use Windows, that doesn't mean I run the software in Windows natively.  While the prerequisites listed below can run natively in Windows, I find the linux version of ODBC to be more configurable and user friendly.  This is why I choose to use a Ubuntu image in WSL (Windows Subsystem for Linux) on my windows laptop.  Ubuntu is one of the most widely used linux distributions, with a vast user community and loads of resources on the web.  So by using a Ubuntu distro running in WSL on my Windows laptop, I get the best of both worlds.
+I use a Windows 11 laptop for running all the software in this blog.  Even though I use Windows, that doesn't mean I run the software in Windows natively.  While the prerequisites listed below can run natively in Windows, I find the linux version of ODBC to be more configurable and user friendly.  This is why I choose to use a Ubuntu image in WSL (Windows Subsystem for Linux) on my Windows laptop.  Ubuntu is one of the most widely used linux distributions, with a vast user community and loads of resources on the web.  So by using a Ubuntu distro running in WSL on my Windows laptop, I get the best of both worlds.
 
 {% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-100" %}
 
@@ -81,7 +81,7 @@ I use a Windows 11 laptop for running all the software in this blog.  Even thoug
 
 Many guides exist online for installing Ubuntu in WSL on Windows, but really its as simple as heading over to the windows store, searching for _UBUNTU_ and installing it.  You can choose to install a specific version of Ubuntu, or just install _Ubuntu_ to get the latest LTS version.
 
-Part of the install process will guide your through setting up a default user and password, and then you can run a Ubuntu command line from your Windows _Start_ menu
+Part of the install process will guide your through setting up a default user and password, and then you can run a Ubuntu command line from your Windows _Start_ menu.  The Windows Terminal app is also excellent and allows you to run a Ubuntu terminal - I have mine set with Ubuntu as the default whenever I start Terminal.
 
 {% endcols %}
 
@@ -97,7 +97,9 @@ Part of the install process will guide your through setting up a default user an
 
 
 
-The good news is that Windows and WSL is not a requirement - all of this software runs happily on a mac or linux machine (and with the exception of Docker, IBM i) as well.  If you are on a Mac, you can skip the Ubuntu install - you can run the rest of this stuff natively.
+The good news is that Windows with WSL is not a requirement - all of this software runs happily on a Mac or Linux machine as well.  Node-RED and Kafka also run on IBM i.  So you can take what is demonstrated here on a local PC and easily run it on your IBM i.  
+
+:bulb: **NOTE:** If you are on a Mac, you can skip the Ubuntu install - you can run the rest of this stuff natively.
 
 </br>
 
@@ -105,7 +107,7 @@ The good news is that Windows and WSL is not a requirement - all of this softwar
 
 ### Docker Desktop
 
-In this example, I chose to run my Kafka cluster in a Docker container.  There are different flavors of Docker, specifically Docker Desktop, vs Docker Engine.  On a development machine, you would typically use [Docker Desktop](https://docs.docker.com/get-docker/).  As Docker is proprietary software, I should mention that there is an open source alternative called [Podman](https://podman.io/) that is available on linux.  I choose to use Docker since its very easy to install on my Windows machine, integrates nicely with WSL, and is also free to use for individuals.
+In this example, I chose to run my Kafka cluster in a Docker container.  There are different flavors of Docker: specifically Docker Desktop, vs Docker Engine.  On a development machine, you would typically use [Docker Desktop](https://docs.docker.com/get-docker/).  As Docker is proprietary software, I should mention that there is an open source alternative called [Podman](https://podman.io/) that is available on linux.  I choose to use Docker since its very easy to install on my Windows machine, integrates nicely with WSL, and is also free to use for individuals.
 
 </br>
 
@@ -147,13 +149,13 @@ Of course you will enter an appropriate description for the DSN - I'm using PUB4
 
 #### unixODBC
 
-After setting up the DSN, another ODBC related prerequisit for this tutorial is to install the unixODBC package.  Head back to your ubuntu command line and enter the following:
+After setting up the DSN, another ODBC related prerequisite for this tutorial is to install the unixODBC package.  Head back to your ubuntu command line and enter the following:
 
 ```bash
 sudo apt-get install unixodbc unixodbc-dev
 ```
 
-After installing the ODBC driver for IBM i, creating a DSN, and installing the unixodbc package, you can test your DSN with the help of the [isql](https://manpages.ubuntu.com/manpages/jammy/man1/isql.1.html) command, passing the name of your DSN as an argument.  This puts you into an interactive prompt where you can run sql statements, or get infomation :
+After installing the ODBC driver for IBM i, creating a DSN, and installing the unixodbc package, you can test your DSN with the help of the [isql](https://manpages.ubuntu.com/manpages/jammy/man1/isql.1.html) command, passing the name of your DSN as an argument.  This puts you into an interactive prompt where you can run sql statements, or get information about the tables in the library:
 
 ```bash
 jweirich@LAPTOP-97G89Q4N:~$ isql PUB400
@@ -175,7 +177,7 @@ SQL> quit
 
 ### Kafka
 
-After installing Docker and Visual Studio Code, you'll go to a bash prompt and download, install, and run Kafka locally in a Docker container.  There are many resources available on the web to do this, but here is one more.
+After installing Docker and Visual Studio Code, you'll go to your bash prompt and download, install, and run Kafka locally in a Docker container.  There are many resources available on the web to do this, but here is one more.
 
 First, create a docker-compose.yml file with these contents:
 
@@ -247,7 +249,7 @@ tcp6       0      0 [::]:22181              [::]:*                  LISTEN
 
 ### Node.JS
 
-Since we aren't using a snap package to install Node-RED (explaination below) we need to install Node.JS before we can install Node-RED.  At the time of this writing, the latest LTS version of Node.JS is 20.  We will follow the [instructions given by microsoft to install Node.JS in WSL](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl).
+Since we aren't using a snap package to install Node-RED (explanation below) we need to install Node.JS before we can install Node-RED.  At the time of this writing, the latest LTS version of Node.JS is 20.  We will follow the [instructions given by microsoft to install Node.JS in WSL](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl).
 
 {% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-100" %}
 
@@ -273,9 +275,9 @@ Since we aren't using a snap package to install Node-RED (explaination below) we
 
 There are several options for installing Node-RED, including running it in a docker container like we are doing with kafka.  For this tutorial, I'm opting to install it locally in Ubuntu running in WSL on my Windows Laptop.  I'm opting not to run Node-RED in a docker container for a number of reasons.  First, because in order for a Node-RED running in a container to talk to Kafka running in a container, you have to create a [docker network bridge](https://docs.docker.com/network/drivers/bridge/), which is more than I want to get into in this blog post.  Second, because later we will want to install Node-RED on IBM i, and the IBM i operating system doesn't support running docker containers.  That means this installation is very similar to what you would do if you want to run Node-RED on IBM i.
 
-After deciding to install NODE-RED in WSL Ubuntu, there are still a couple of choices listed in the [Node-RED documentation](https://nodered.org/docs/getting-started/local).  Ubuntu supports SNAP packages, and that is one option, but I choose to install it using NPM, cheifly because the SNAP install doesn't allow git integrations.
+After deciding to install NODE-RED in WSL Ubuntu, there are still a couple of choices listed in the [Node-RED documentation](https://nodered.org/docs/getting-started/local).  Ubuntu supports SNAP packages, and that is one option, but I choose to install it using NPM, chiefly because the SNAP install doesn't allow git integrations, and doesn't run on IBM i either.  Even though I'm running this locally, I want to keep thee instructions as close to what you would do on the IBM i as much as possible.
 
-Follwing the Node-RED documentation linked above, the command to install Node-RED globally (in Ubuntu) is `sudo npm install -g --unsafe-perm node-red`.  
+Following the Node-RED documentation linked above, the command to install Node-RED globally (in Ubuntu) is `sudo npm install -g --unsafe-perm node-red`.  
 
 After the Node-RED install has completed, you can run Node-RED by running the command `node-red`.
 
