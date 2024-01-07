@@ -38,7 +38,7 @@ excerptCustom: 'text-sm leading-relaxed italic text-gray-600',
 
 Here's a sample snippet from the `/src/_data/colors.js` file showing how to completely customize the main navbar above:
 
-> NOTE: I'd love to have more color variants...for exmaple lighter text colors for some elements. But you'll find you get dinged in [Lighthouse reports](https://developers.google.com/web/tools/lighthouse) if you don't have [sufficient color contrast ratio](https://web.dev/color-contrast/).
+> NOTE: I'd love to have more color variants...for example lighter text colors for some elements. But you'll find you get dinged in [Lighthouse reports](https://developers.google.com/web/tools/lighthouse) if you don't have [sufficient color contrast ratio](https://web.dev/color-contrast/).
 
 ```js
 /**
@@ -55,7 +55,7 @@ Here's a sample snippet from the `/src/_data/colors.js` file showing how to comp
  *
  *    "xxxCustom" values will always override "xxxDefault" values.
  *
- * ~~~~~ Cusomization tip ~~~~~
+ * ~~~~~ Customization tip ~~~~~
  *    To quickly create a full set of custom colors,
  *    simply select and copy the set of "Default" elements
  *    and 'replace paste' them in the "Custom" area.

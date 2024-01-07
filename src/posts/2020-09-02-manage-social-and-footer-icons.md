@@ -65,11 +65,11 @@ The same is true for the social links in the `/src/_data/authors.json` where you
 
 ## Adding SVG Icons to Content in Your .md Posts
 
-The post [SVG - Shortcode](/2020/09/09/svg-shortcode/) goes into detai on how to manage all the SVG Sprites in the system and how to add them to your Post and Pages markdown content via a Shortcode.
+The post [SVG - Shortcode](/2020/09/09/svg-shortcode/) goes into detail on how to manage all the SVG Sprites in the system and how to add them to your Post and Pages markdown content via a Shortcode.
 
 ## Post Social Share Icons
 
-Posts details, such as this page, have "Social Share" icons built in so readers can easily share to their favorite platform. These SVGs, alond with the native share code for each platform are managed in the `/src/_includes/components/socialshare.njk` file.
+Posts details, such as this page, have "Social Share" icons built in so readers can easily share to their favorite platform. These SVGs, along with the native share code for each platform are managed in the `/src/_includes/components/socialshare.njk` file.
 
 And in the `/src/_data/structure.js` file you can globally disable Footer and Post Share icons:
 

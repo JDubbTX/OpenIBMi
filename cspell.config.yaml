@@ -5,7 +5,10 @@ dictionaries: []
 words:
   - ACTGRP
   - Aldon
+  - ALLOBJ
   - autoplay
+  - Bekah
+  - Blockquotes
   - bnddir
   - BNDUTIL
   - CCSID
@@ -22,17 +25,22 @@ words:
   - CRTDTAQ
   - CRTRPGMOD
   - CRTSRVPGM
+  - cssmin
   - CURLIB
   - dashboarding
   - dataq
   - dataqlib
   - dftactgrp
   - distro
+  - dribbble
   - DSPF
+  - dspfd
   - DSPSIZ
+  - DSPSYSVAL
   - DTAARA
   - DTAQ
   - elasticlunr
+  - endbq
   - endcols
   - endcolumns
   - enddd
@@ -41,6 +49,7 @@ words:
   - enddt
   - endpgm
   - ENDPGMEXP
+  - endraw
   - endwrap
   - esac
   - evfevent
@@ -52,6 +61,7 @@ words:
   - IBMI
   - ILEDOCS
   - inlr
+  - Iola
   - iproj
   - isql
   - jweirich
@@ -60,6 +70,8 @@ words:
   - Kjjhaej
   - kornshell
   - LIBL
+  - luxon
+  - macdougall
   - MAXLEN
   - millisecs
   - miworkplace
@@ -75,7 +87,14 @@ words:
   - objlib
   - ODBC
   - PGMLVL
+  - piedpiper
+  - pinterest
+  - pixabay
   - pkgs
+  - postslist
+  - postslistblocks
+  - postslistcards
+  - postslistthumbs
   - precompiler
   - PRINTTHIS
   - Proto
@@ -98,16 +117,22 @@ words:
   - SAVF
   - Seeberger
   - serveraddress
+  - Shortcode
+  - Shortcodes
+  - socialshare
   - SQLRPGLE
   - sqltype
   - SRCSTMF
   - SRVPGM
+  - Streamfile
+  - streamfiles
   - STRPGMEXP
   - STRSEU
   - SUBDIRS
   - tablename
   - tailwindcss
   - templating
+  - ubb
   - unixodbc
   - USERID
   - Usrlibl

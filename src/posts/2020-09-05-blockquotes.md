@@ -47,7 +47,7 @@ With a simple `bq` shortcode, you can override the default CSS and style it howe
 
 ```js
 {% bq "p-4 border-red-500 italic text-blue-500 border-t-4 bg-gray-200" %}
-this is another blockquote via the `bq` paired shortcode located in `/utils/paired-shorcodes.js`.
+this is another blockquote via the `bq` paired shortcode located in `/utils/paired-shortcodes.js`.
 {% endbq %}
 ```
 
@@ -56,12 +56,12 @@ this is another blockquote via the `bq` paired shortcode located in `/utils/pair
 Generates the customized blockquote below:
 
 {% bq "p-4 border-red-500 italic text-blue-500 border-t-4 bg-gray-200" %}
-this is another blockquote via the `bq` paired shortcode located in `/utils/paired-shorcodes.js`.
+this is another blockquote via the `bq` paired shortcode located in `/utils/paired-shortcodes.js`.
 {% endbq %}
 
 ## Adding Emoji to Blockquotes _(or anywhere you want)_
 
-Because this system uses [markdown-it-emoji](https://www.npmjs.com/package/markdown-it-emoji) we can insert Emojis anywhere by using their `:code:` as in the exmaple below:
+Because this system uses [markdown-it-emoji](https://www.npmjs.com/package/markdown-it-emoji) we can insert Emojis anywhere by using their `:code:` as in the example below:
 
 ```md
 > :bulb: **NOTE:** A blockquote with a nice Emoji to draw attention.

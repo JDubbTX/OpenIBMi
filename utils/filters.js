@@ -10,7 +10,7 @@ module.exports = {
 	 */
 
 	/**
-	 * dateToFormat allows specifiying display format at point of use.
+	 * dateToFormat allows specifying display format at point of use.
 	 * Example in footer: {{ build.timestamp | dateToFormat('yyyy') }} uses .timestamp
 	 *  from the _data/build.js export and formats it via dateToFormat.
 	 * Another usage example used in layouts: {{ post.date | dateToFormat("LLL dd, yyyy") }}
