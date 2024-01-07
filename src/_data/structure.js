@@ -38,7 +38,7 @@ module.exports = {
 	 *
 	 * Add and Manage Author data in src/_data/authors.json
 	 */
-	g_showAuthors: false,
+	g_showAuthors: true,
 
 	/**
 	 * ===== Display Footer & Social Share Icons =====

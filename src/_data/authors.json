@@ -1,28 +1,20 @@
 [
 	{
-		"slug": "shane-robinson",
-		"name": "Shane Robinson",
-		"image": "/assets/images/authors/shane-robinson.jpg",
-		"bio": "I built this...and a lot of other things over the past 23+ years as a founder, developer, sys admin, and database architect. I taught myself to code in B.A.S.I.C. in 1983/4 on a Commodore 64 hooked up to my 13 in. black/white TV. Then we built large CMS systems in the 90s using PERL, SSI, and eventually the early versions of PHP. This was all years before Wordpress even existed. Fast forward to 2017 when I semi-retired from coding to spend more time on my Art practice. In early 2020 I wanted to throw a small ecommerce website together and planned to build it in HUGO (like I previously had with my own personal website.) After some research I found 11ty and knew I finally had a set of tools to quickly build secure, fast, fun-to-code websites. Not finding exactly what I wanted in a starter project/template, I built this to use as a template for turning out small sites and migrating several of our Wordpress sites to static.",
+		"slug": "john-weirich",
+		"name": "John Weirich",
+		"image": "/assets/images/authors/john-weirich.jpg",
+		"bio": "My passion is for modernization and open source technologies on the IBM i platform.   Nelnet is a member of the IBM i LUG, or Large User Group.  Through attending LUG meetings, or other conferences like the now defunct RPG and DB2 summit, I have learned quite a bit about modernization of the IBM i platform.  My other passions include adoption and foster care, as well as playing my cello.  At the time of this writing, I've been married to my wife Bekah for 25 years, and I am the father in a large family with 9 kids, almost all of whom are adopted, placed with us in foster care, or we have custody that stemmed from foster care.  My oldest daughter Madelyn is our only natural born progeny, and she is currently living and studying abroad in Madrid, Spain.  Lately I've been been playing my cello for The Theatre Company’s production of the broadway musical Oklahoma!.",
 		"companyWebsites": [
 			{
-				"label": "Bare Feet Studios, LLC",
-				"url": "https://www.barefeetstudios.com",
-				"email": "shane@barefeetstudios.com"
+				"label": "Open Your i",
+				"url": "",
+				"email": "weirich_j@hotmail.com"
 			}
 		],
 		"personalWebsites": [
 			{
 				"label": "ShaneRobinson.com",
-				"url": "https://www.shanerobinson.com"
-			},
-			{
-				"label": "Linkist: Control your own links",
-				"url": "https://linkist.netlify.app/"
-			},
-			{
-				"label": "#100DaysOfCode project minisite",
-				"url": "https://sr-100daysofcode.netlify.app/"
+				"url": ""
 			}
 		],
 		"socialWebsites": [
@@ -32,76 +24,15 @@
 			},
 			{
 				"label": "github",
-				"url": "https://github.com/shanerobinson"
+				"url": "https://github.com/jdubbtx"
 			},
 			{
 				"label": "instagram",
-				"url": "https://instagram.com/shanerobinson"
+				"url": "https://www.instagram.com/imaraddad/"
 			},
 			{
 				"label": "linkedin",
-				"url": "https://linkedin.com/in/rshanerobinson"
-			},
-			{
-				"label": "piedpiper",
-				"url": "https://piedpiper.com/shanerobinson"
-			},
-			{
-				"label": "pinterest",
-				"url": "https://pinterest.com/shanerobinson"
-			},
-			{
-				"label": "twitter",
-				"url": "https://twitter.com/shanerobinson"
-			},
-			{
-				"label": "youtube",
-				"url": ""
-			}
-		]
-	},
-	{
-		"slug": "roxanne-darling",
-		"name": "Roxanne Darling",
-		"image": "/assets/images/authors/roxanne-darling.jpg",
-		"bio": "Roxanne Darling loves to travel, speak in public, be on and in the ocean, and is giving up working really long hours. She walks the line between technology and communication with a ballerina’s balance (she used to dance at the Palo Alto Dance Theatre and is a certified yoga instructor) and has a way of inspiring even luddites to try new things with technology. Please let it be known though, perhaps as a graduate of UC Berkeley, she is not a bystander or interested in the status quo!",
-		"companyWebsites": [
-			{
-				"label": "Bare Feet Studios, LLC",
-				"url": "https://www.barefeetstudios.com",
-				"email": "roxanne@barefeetstudios.com"
-			}
-		],
-		"personalWebsites": [
-			{
-				"label": "RoxanneDarling.com",
-				"url": "https://www.roxannedarling.com/"
-			},
-			{
-				"label": "In The Transition",
-				"url": "https://www.inthetransition.com/"
-			},
-			{
-				"label": "I Am: For The Love Of Nature",
-				"url": "https://www.iamfortheloveofnature.com/"
-			}
-		],
-		"socialWebsites": [
-			{
-				"label": "dribbble",
-				"url": ""
-			},
-			{
-				"label": "github",
-				"url": ""
-			},
-			{
-				"label": "instagram",
-				"url": "https://instagram.com/roxannedarling"
-			},
-			{
-				"label": "linkedin",
-				"url": "https://linkedin.com/in/roxannedarling"
+				"url": "https://www.linkedin.com/in/john-weirich/"
 			},
 			{
 				"label": "piedpiper",
@@ -109,11 +40,11 @@
 			},
 			{
 				"label": "pinterest",
-				"url": "https://pinterest.com/roxannedarling"
+				"url": ""
 			},
 			{
 				"label": "twitter",
-				"url": "https://twitter.com/roxannedarling"
+				"url": "https://twitter.com/weirich_j"
 			},
 			{
 				"label": "youtube",
