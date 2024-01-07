@@ -119,6 +119,7 @@ words:
   - serveraddress
   - Shortcode
   - Shortcodes
+  - SJYRHA
   - socialshare
   - SQLRPGLE
   - sqltype
@@ -137,6 +138,9 @@ words:
   - USERID
   - Usrlibl
   - VARBINARY
+  - vratio
+  - vstart
+  - vtitle
   - weirich
   - workstn
   - WRKMBRPDM
