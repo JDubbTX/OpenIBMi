@@ -23,7 +23,7 @@ tags:
 
 *:hammer: this post is under construction*
 
-## Why use Git
+## "/{{ Why use Git | slugify }}/"
 ## Why use Git in VS Code
 ## Requirements
 ## Committing your work

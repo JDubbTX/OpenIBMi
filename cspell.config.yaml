@@ -16,6 +16,7 @@ words:
   - cicd
   - clle
   - clpgm
+  - CLRLIB
   - configurability
   - confluentinc
   - CPYTOSTMF
@@ -23,6 +24,7 @@ words:
   - CRTDIR
   - CRTDSPF
   - CRTDTAQ
+  - CRTLIB
   - CRTRPGMOD
   - CRTSRVPGM
   - cssmin
@@ -50,6 +52,7 @@ words:
   - endpgm
   - ENDPGMEXP
   - endraw
+  - ENDSSH
   - endwrap
   - esac
   - evfevent
@@ -72,6 +75,7 @@ words:
   - LIBL
   - luxon
   - macdougall
+  - makei
   - MAXLEN
   - millisecs
   - miworkplace
