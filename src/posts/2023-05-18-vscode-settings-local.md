@@ -21,7 +21,7 @@ This post explains the Code for IBM i settings that I find helpful.
 
 This is covered in [RPG CiCd - Part 2 - Local Development Setup](/2023/05/14/rpg-cicd-part-2-local-development-setup) in detail, but generally you install vscode in windows/mac/linux and then search for **IBM i development pack** in the **extensions** view.
 
-If you have already set up a connection and you want to add a new connection, you can add more.  This is useful if you manage multiple IBM i's, or you have multiople logins to the same IBM i.
+If you have already set up a connection and you want to add a new connection, you can add more.  This is useful if you manage multiple IBM i's, or you have multiple logins to the same IBM i.
 
 ## Create a connection
 
@@ -51,15 +51,15 @@ Find these settings by right clicking on your connection and selecting "Connecti
 ![Show description next to libraries](/assets/images/Settings-lib-desc.jpg)
 
 * Support EBCDIC streamfiles
-  - I don't really use this.  Streamfile source shoult be UTF-8, but if you converted source from file members, they may be 
+  - I don't really use this.  Streamfile source should be UTF-8, but if you converted source from file members, they may be 
 * Errors to ignore
   - I don't use this, but I can see how this could be helpful.
 * Auto Save for Actions
-  - I do like to keep this checked.  Its very frustraqting when you forget to hit save and have to go back and do it again.
+  - I do like to keep this checked.  Its very frustrating when you forget to hit save and have to go back and do it again.
 
 ## Source Code
 * Source ASP
-  - I haven't needed to use this - you need it if your development IBM i lpar has an Auxilary Storage Pool.
+  - I haven't needed to use this - you need it if your development IBM i lpar has an Auxiliary Storage Pool.
 * Source file CCSID
   - You probably don't need to change this from \*FILE.  The instructions say to only change it if you have a source file that is 65535.  You can check this in an SSH session with `cl dspfd LibName/FileName | grep CCSID`.
   ![Checking file CCSID](/assets/images/FileCCSID.jpg)

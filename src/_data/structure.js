@@ -18,7 +18,7 @@ module.exports = {
 	/**
 	 * Set alignment of Pagination links on Post Listing views.
 	 * NOTE: Pagination tabs don't display if not required.
-	 * This is controled in the Frontmatter of the listing template
+	 * This is controlled in the Frontmatter of the listing template
 	 *
 	 * Options = start, center, end
 	 */
@@ -82,7 +82,7 @@ module.exports = {
 	 * NOTE: If you want to make your own list layouts, you can duplicate
 	 *        any of the existing layouts and modify as you want.
 	 *        Then just add them to the list above
-	 *        (makeing sure to name correctly)
+	 *        (making sure to name correctly)
 	 *        and they'll then be available for using below in
 	 *        'postListStyle' and 'tagListStyle.'
 	 *
