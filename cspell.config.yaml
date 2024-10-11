@@ -4,9 +4,11 @@ dictionaryDefinitions: []
 dictionaries: []
 words:
   - ACTGRP
+  - ADDENVVAR
   - Aldon
   - ALLOBJ
   - autoplay
+  - awardable
   - Bekah
   - Blockquotes
   - bnddir
@@ -15,8 +17,10 @@ words:
   - chgvar
   - cicd
   - clle
+  - CLOB
   - clpgm
   - CLRLIB
+  - CMDLINE
   - configurability
   - confluentinc
   - CPYTOSTMF
@@ -38,6 +42,7 @@ words:
   - DSPF
   - dspfd
   - DSPSIZ
+  - DSPSTDOUT
   - DSPSYSVAL
   - DTAARA
   - DTAQ
@@ -60,8 +65,32 @@ words:
   - extpgm
   - FKEYS
   - Gitbash
+  - glpat
   - greenscreen
+  - HTTPAPI
+  - HTTPBLOB
+  - HTTPBLOBVERBOSE
+  - HTTPCLOB
+  - HTTPCLOBVERBOSE
+  - HTTPDELETEBLOB
+  - HTTPDELETEBLOBVERBOSE
+  - HTTPDELETECLOB
+  - HTTPDELETECLOBVERBOSE
+  - HTTPGETBLOB
+  - HTTPGETBLOBVERBOSE
+  - HTTPGETCLOB
+  - HTTPGETCLOBVERBOSE
+  - HTTPHEAD
+  - HTTPPOSTBLOB
+  - HTTPPOSTBLOBVERBOSE
+  - HTTPPOSTCLOB
+  - HTTPPOSTCLOBVERBOSE
+  - HTTPPUTBLOB
+  - HTTPPUTBLOBVERBOSE
+  - HTTPPUTCLOB
+  - HTTPPUTCLOBVERBOSE
   - IBMI
+  - ICSS
   - ILEDOCS
   - inlr
   - Iola
@@ -72,6 +101,7 @@ words:
   - keychain
   - keyscan
   - Kjjhaej
+  - Klement's
   - kornshell
   - LIBL
   - luxon
@@ -91,6 +121,7 @@ words:
   - nodebugio
   - objlib
   - ODBC
+  - Oni's
   - openyouri
   - PGMLVL
   - piedpiper
@@ -108,9 +139,12 @@ words:
   - QCLLESRC
   - QDDSSRC
   - QDTASRC
+  - QIBM
   - QPRINT
   - QPRPGLESRC
   - QRPGLESRC
+  - QSHCURL
+  - QSHONI
   - QSNDDTAQ
   - QSRVSRC
   - QSYS
@@ -121,6 +155,7 @@ words:
   - Ryver
   - SASL
   - SAVF
+  - Schoen's
   - Seeberger
   - serveraddress
   - Shortcode
@@ -136,11 +171,16 @@ words:
   - STRPGMEXP
   - STRSEU
   - SUBDIRS
+  - SYSTOOL
+  - SYSTOOLS
   - tablename
   - tailwindcss
   - templating
   - ubb
   - unixodbc
+  - URLDECODE
+  - URLENCODE
+  - USERDATA
   - USERID
   - Usrlibl
   - VARBINARY
