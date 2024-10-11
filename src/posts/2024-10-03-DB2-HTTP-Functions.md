@@ -104,7 +104,7 @@ The Utility functions in QSYS2 don't include a replacement for HTTPHEAD, but the
 
 ## How do I use these functions?
 
-These functions are great for programmatically interacting with web based applications.  Most web based applications publish API's that allow you to interact with them.  You can imbed these DB2 functions in an RPG program, or call them with RUNSQL or 
+These functions are great for programmatically interacting with web based applications.  Most web based applications publish API's that allow you to interact with them.  You can imbed these DB2 functions in an RPG program, or call them with RUNSQL or run them in a CL program with RUNSQL or RUNSQLSTM.
 
 </br>
 
