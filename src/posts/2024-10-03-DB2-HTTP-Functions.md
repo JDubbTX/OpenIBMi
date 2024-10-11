@@ -155,6 +155,7 @@ And heres a short clip of it working:
 {% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-200 break-all" %}
 
 </br>
+
 #### The response
 
 Results are provided in table format, with the response message and response header.
