@@ -130,6 +130,8 @@ In order to talk to the Gitlab server, we have to authenticate.  Gitlab, like ma
 
 ![Gitlab: Generate a Personal Access Token](/assets/images/2024/10/Gitlab-Personal-Access-Token.png)
 
+**note** Before publishing this article, the Personal Access Token used in the examples was deactivated.
+
 #### DB2 SQL Code
 
 And here is the DB2 SQL code using the qsys2 function http_post_verbose that will create an emoji reaction on our merge request:
