@@ -186,6 +186,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('src/assets/svg/')
 	eleventyConfig.addPassthroughCopy('src/assets/video/')
     eleventyConfig.addPassthroughCopy('src/assets/js/')
+	eleventyConfig.addPassthroughCopy('src/assets/css/')
 	eleventyConfig.addPassthroughCopy('src/js')
 
 
