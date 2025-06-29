@@ -10,7 +10,7 @@ module.exports = {
 	 *
 	 * ===== Global Site Text Color =====
 	 */
-	siteTextDefault: 'text-gray-900',
+	siteTextDefault: 'text-gray-900 dark:text-gray-100',
 	siteTextCustom: '',
 
 	/**
@@ -36,8 +36,8 @@ module.exports = {
 	 *    and wil ensure no errors in "text", "bg", and "border" values.
 	 */
 	navDefault: {
-		barBg: 'bg-white',
-		text: 'text-teal-500',
+		barBg: 'bg-white dark:bg-gray-800',
+		text: 'text-teal-500 dark:text-teal-400',
 		textActive: 'text-teal-600',
 		textHover: 'text-teal-600',
 		textActiveBg: 'bg-teal-100',
@@ -59,8 +59,8 @@ module.exports = {
 	 *  If you delete any variable keys, 11ty won't work.
 	 */
 	navCustom: {
-		barBg: 'bg-white',
-		text: 'text-gray-700',
+		barBg: 'bg-white dark:bg-gray-800',
+		text: 'text-gray-700 dark:text-gray-300',
 		textActive: 'text-gray-800',
 		textHover: 'text-gray-800',
 		textActiveBg: 'bg-gray-100',
