@@ -1,0 +1,98 @@
+/* Simple dark mode CSS */
+html.dark {
+  background-color: #1a202c !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark body {
+  background-color: #1a202c !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark main {
+  background-color: #1a202c !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark article {
+  background-color: #1a202c !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark nav {
+  background-color: #2d3748 !important;
+}
+
+html.dark nav a {
+  color: #e2e8f0 !important;
+}
+
+html.dark .bg-white {
+  background-color: #2d3748 !important;
+}
+
+html.dark .bg-gray-50,
+html.dark .bg-gray-100,
+html.dark .bg-gray-200 {
+  background-color: #2d3748 !important;
+}
+
+html.dark .text-gray-700,
+html.dark .text-gray-900,
+html.dark .text-gray-600,
+html.dark .text-gray-800 {
+  color: #e2e8f0 !important;
+}
+
+html.dark .text-gray-500 {
+  color: #a0aec0 !important;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: #f7fafc !important;
+}
+
+html.dark a {
+  color: #63b3ed !important;
+}
+
+html.dark a:hover {
+  color: #90cdf4 !important;
+}
+
+html.dark code {
+  background-color: #2d3748 !important;
+  color: #e2e8f0 !important;
+  border-color: #4a5568 !important;
+}
+
+html.dark pre {
+  background-color: #2d3748 !important;
+}
+
+html.dark blockquote {
+  border-color: #4a5568 !important;
+  background-color: #2d3748 !important;
+}
+
+html.dark hr {
+  border-color: #4a5568 !important;
+}
+
+/* Dark mode toggle button styling */
+#dark-mode-toggle {
+  background-color: #4a5568;
+  color: #f7fafc;
+  border: 1px solid #718096;
+}
+
+html.dark #dark-mode-toggle {
+  background-color: #edf2f7;
+  color: #2d3748;
+  border: 1px solid #cbd5e0;
+}

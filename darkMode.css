@@ -1,0 +1,14 @@
+
+html.dark, body.dark {
+  background-color: #181818;
+  color: #f1f1f1;
+}
+
+html.dark button, html.dark input, html.dark textarea,
+body.dark button, body.dark input, body.dark textarea {
+  background-color: #222;
+  color: #f1f1f1;
+  border-color: #444;
+}
+
+/* Add more dark mode styles as needed */

@@ -24,9 +24,14 @@
       </div>
 
       {# Right side of Navbar  #}
+      <div class="flex items-center space-x-4">
+        <!-- Dark mode toggle button -->
+        <button id="dark-mode-toggle" type="button" class="px-3 py-2 rounded-md text-sm font-medium focus:outline-none transition duration-150 ease-in-out bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200" aria-label="Toggle dark mode">
+          <span class="inline-block align-middle">🌙</span>
+        </button>
 
-      {# MOBILE MENU  #}
-      <div class="flex items-center -mr-2 sm:hidden">
+        {# MOBILE MENU  #}
+        <div class="flex items-center -mr-2 sm:hidden">
         {# Mobile menu button #}
         <button @click="open = !open" class="inline-flex items-center justify-center p-2 {{ colors.navCustom.mobileButton or colors.navDefault.mobileButton }} transition duration-150 ease-in-out rounded-md hover:{{ colors.navCustom.mobileButton or colors.navDefault.mobileButton }} hover:{{ colors.navCustom.mobileButtonBgover or colors.navDefault.mobileButtonBgHover }} focus:outline-none focus:{{ colors.navCustom.mobileButton or colors.navDefault.mobileButton }} focus:{{ colors.navCustom.mobileButton or colors.navDefault.mobileButton }}" x-bind:aria-label="open ? 'Close main menu' : 'Main menu'" aria-label="Main menu" x-bind:aria-expanded="open">
           {# Icon when menu is closed.  #}
@@ -50,6 +55,14 @@
           {{ entry.title }}
         </a>
       {% endfor %}
+      
+      <!-- Dark mode toggle button for mobile -->
+      <div class="pl-4 pr-4 py-2">
+        <button id="dark-mode-toggle-mobile" type="button" class="w-full text-left px-3 py-2 rounded-md text-base font-medium focus:outline-none transition duration-150 ease-in-out bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200" aria-label="Toggle dark mode">
+          <span class="inline-block align-middle mr-2">🌙</span>
+          Dark Mode
+        </button>
+      </div>
 
     </div>
 

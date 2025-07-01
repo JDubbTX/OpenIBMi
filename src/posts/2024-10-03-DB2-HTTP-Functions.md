@@ -104,7 +104,7 @@ The Utility functions in QSYS2 don't include a replacement for HTTPHEAD, but the
 
 ## How do I use these functions?
 
-These functions are great for programmatically interacting with web based applications.  Most web based applications publish API's that allow you to interact with them.  You can imbed these DB2 functions in an RPG program, or call them with RUNSQL or 
+These functions are great for programmatically interacting with web based applications.  Most web based applications publish API's that allow you to interact with them.  You can imbed these DB2 functions in an RPG program, or call them with RUNSQL or run them in a CL program with RUNSQL or RUNSQLSTM.
 
 </br>
 
@@ -130,6 +130,8 @@ In order to talk to the Gitlab server, we have to authenticate.  Gitlab, like ma
 
 ![Gitlab: Generate a Personal Access Token](/assets/images/2024/10/Gitlab-Personal-Access-Token.png)
 
+**note** Before publishing this article, the Personal Access Token used in the examples was deactivated.
+
 #### DB2 SQL Code
 
 And here is the DB2 SQL code using the qsys2 function http_post_verbose that will create an emoji reaction on our merge request:
@@ -153,6 +155,7 @@ And heres a short clip of it working:
 {% wrap "px-2 mt-8 rounded-lg pb-2 border border-gray-300 bg-gray-200 break-all" %}
 
 </br>
+
 #### The response
 
 Results are provided in table format, with the response message and response header.
