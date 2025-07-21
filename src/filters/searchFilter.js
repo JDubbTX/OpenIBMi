@@ -1,6 +1,6 @@
 const elasticlunr = require("elasticlunr");
 
-module.exports = function (collection) {
+module.exports = async function (collection) {
   // what fields we'd like our index to consist of
   var index = elasticlunr(function () {
     this.addField("title");
@@ -10,14 +10,26 @@ module.exports = function (collection) {
   });
 
   // loop through each post and add it to the index
-  collection.forEach((post) => {
+  for (const post of collection) {
+    let data = {};
+    if (typeof post.template.read === 'function') {
+      // Use the async read() method if available
+      try {
+        data = await post.template.read();
+      } catch (e) {
+        // fallback to frontMatter.data if read() fails
+        data = post.template.frontMatter?.data || {};
+      }
+    } else {
+      data = post.template.frontMatter?.data || {};
+    }
     index.addDoc({
       id: post.url,
-      title: post.template.frontMatter.data.title,
-      excerpt: post.template.frontMatter.data.excerpt,
-      tags: post.template.frontMatter.data.tags,
+      title: data.title,
+      excerpt: data.excerpt,
+      tags: data.tags,
     });
-  });
+  }
 
   return index.toJSON();
 };
